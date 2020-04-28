@@ -1,0 +1,151 @@
+﻿@page "{id:int?}"
+@model LoginDemo.Pages.Manager.RoleMod.AdminOperatingModel
+@{
+    ViewData["Title"] = "管理员列表操作";
+}
+<!DOCTYPE html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="~/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="~/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="~/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="~/css/animate.min.css" rel="stylesheet">
+    <link href="~/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>管理员列表</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <form method="post" class="form-horizontal" enctype="multipart/form-data">
+                            <input asp-for="GetT.Id" hidden />
+                            <input asp-for="GetT.Password" hidden />
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">账号</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" asp-for="GetT.Username" required>
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">密码</label>
+                                <div class="col-sm-10">
+                                    <input type="password" name="Password" id="pwd" placeholder="请设置登录密码" class="form-control">
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">确认密码</label>
+                                <div class="col-sm-10">
+                                    <input type="password" name="Password" id="pwd1" placeholder="请再次填写密码" onkeyup="validate()" class="form-control">
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">角色</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" asp-for="SelectP" asp-items="Model.SLitem"></select>
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+
+
+                            <div class="form-group">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <button class="btn btn-primary" type="submit" id="button">保存内容</button>
+                                    <button class="btn btn-white" type="button" onclick="history.back()">取消</button>
+                                    <span id="tishi"></span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="~/js/jquery.min.js?v=2.1.4"></script>
+    <script src="~/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="~/js/content.min.js?v=1.0.0"></script>
+    <script src="~/js/plugins/iCheck/icheck.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="~/libs/global.js"></script>
+    <script>
+        $(document).ready(function () { $(".i-checks").iCheck({ checkboxClass: "icheckbox_square-green", radioClass: "iradio_square-green", }) });
+        function call_back(fileurl_tmp) {
+            $("#original_img").html('<img src="' + fileurl_tmp + '" alt="" style="height:34px">');
+            $('#original_img_input').val(fileurl_tmp);
+        }
+
+        $('.goods-image').mouseover(function () {
+            $(this).next().show();
+        }).mouseout(function () {
+            $(this).next().hide();
+        });
+        function validate() {
+            var pwd1 = document.getElementById("pwd").value;
+            var pwd2 = document.getElementById("pwd1").value;
+            if ((pwd1 == null || pwd1 == undefined) && (pwd2 == undefined || pwd12 == null)) document.getElementById("button").disabled = false;
+            if (pwd1 == pwd2) {
+                document.getElementById("tishi").innerHTML = "<font color='green'>两次密码相同</font>";
+                document.getElementById("button").disabled = false;
+            }
+            else {
+                document.getElementById("tishi").innerHTML = "<font color='red'>两次密码不相同</font>";
+                document.getElementById("button").disabled = true;
+            }
+        }
+
+    </script>
+
+</body>
+
+
+<!---
+
+<h2>管理员列表操作</h2>
+
+<form method="post">
+    <input asp-for="GetT.Id" hidden />
+    <input asp-for="GetT.Password" hidden />
+    <label>账号</label><input asp-for="GetT.Username" />
+    <label>密码</label><input type="password" name="Password" id="pwd" placeholder="请设置登录密码" />
+    <label>确认密码</label><input type="password" name="Password" id="pwd1" placeholder="请再次填写密码" onkeyup="validate()" />
+    <label>角色</label><select asp-for="SelectP" asp-items="Model.SLitem"></select>
+
+    <span id="tishi"></span>
+    <button class="btn btn-primary" type="submit" id="button">保存内容</button>
+    <button class="btn btn-white" type="button" onclick="history.back()">取消</button>
+</form>-->
+<script>
+
+</script>
+<!--
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label"></label>
+                            <div class="col-sm-10">
+
+                            </div>
+                        </div>
+
+
+
+-->

@@ -1,0 +1,89 @@
+﻿@page
+@model LoginDemo.Pages.Manager.ArticleMod.ArticleCategoryModel
+@{
+    ViewData["Title"] = "文章分类";
+}
+
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="~/dist/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="~/dist/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="~/dist/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="~/dist/css/animate.min.css" rel="stylesheet">
+    <link href="~/dist/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>文章分类</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <a type="button" href="@Model._OperatingUrl" class="btn btn-primary">增加</a>
+
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>分类名称</th>
+                                    <th>操作</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var x in Model.List)
+                                {
+                                    <tr>
+                                        <td>@x.Id</td>
+                                        <td>@x.Name</td>
+                                        <td>
+                                            <a href="/Manager/ArticleMod/index/?handler=ById&cateid=@x.Id" class="btn btn-info btn-xs" type="button">查看文章</a>
+                                            <a href="@Model._OperatingUrl/@x.Id" class="btn btn-warning btn-xs" type="button">编辑</a>
+                                            <button type="button" class="btn btn-danger btn-xs" onclick="Delete('@Model._thisUrl','Delete',@x.Id)">删除</button>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <pager page-data="@Model.PageData"></pager>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/dist/js/jquery.min.js?v=2.1.4"></script>
+    <script src="~/dist/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="~/dist/js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="~/dist/js/content.min.js?v=1.0.0"></script>
+    <script src="~/dist/js/plugins/iCheck/icheck.min.js"></script>
+    <script src="~/dist/js/demo/peity-demo.min.js"></script>
+    <script src="~/js/CZBJavaScript.js"></script>
+
+    <script>
+        $(document).ready(function () { $(".i-checks").iCheck({ checkboxClass: "icheckbox_square-green", radioClass: "iradio_square-green", }) });
+
+        $('.table-image').mouseover(function () {
+            $(this).next().show();
+        }).mouseout(function () {
+            $(this).next().hide();
+        });
+    </script>
+
+
+
+</body>

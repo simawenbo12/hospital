@@ -1,0 +1,178 @@
+﻿@page
+@model LoginDemo.Pages.Manager.rightModel
+@{
+    ViewData["Title"] = "广告列表";
+}
+<!DOCTYPE html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="~/dist/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="~/dist/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+
+    <!-- Morris -->
+    <link href="~/dist/css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
+
+    <!-- Gritter -->
+    <link href="~/dist/js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+
+    <link href="~/dist/css/animate.min.css" rel="stylesheet">
+    <link href="~/dist/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-success pull-right"></span>
+                        <h5>今日浏览量</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <h1 class="no-margins">@Model.UserLogTempMod.TodayVisitor</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>今日用户量</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <h1 class="no-margins">@Model.UserLogTempMod.TodayUser</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>近30天浏览量</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <h1 class="no-margins">@Model.UserLogTempMod.MouthVisitor</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>近30天用户量</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <h1 class="no-margins">@Model.UserLogTempMod.MouthUser</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>统计</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="chart">
+                                    <div id="statistics" style="height: 400px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="~/dist/js/jquery.min.js?v=2.1.4"></script>
+    <script src="~/dist/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="~/dist/js/plugins/flot/jquery.flot.js"></script>
+    <script src="~/dist/js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="~/dist/js/plugins/flot/jquery.flot.spline.js"></script>
+    <script src="~/dist/js/plugins/flot/jquery.flot.resize.js"></script>
+    <script src="~/dist/js/plugins/flot/jquery.flot.pie.js"></script>
+    <script src="~/dist/js/plugins/flot/jquery.flot.symbol.js"></script>
+    <script src="~/dist/js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="~/dist/js/demo/peity-demo.min.js"></script>
+    <script src="~/dist/js/content.min.js?v=1.0.0"></script>
+    <script src="~/dist/js/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="~/dist/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="~/dist/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="~/dist/js/plugins/easypiechart/jquery.easypiechart.js"></script>
+    <script src="~/dist/js/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <script src="~/dist/js/demo/sparkline-demo.min.js"></script>
+    <script src="~/dist/js/plugins/echarts/echarts-all.js"></script>
+    <script>
+        var ss = { "time": ["2019/01/27", "2019/01/28", "2019/01/29", "2019/01/30", "2019/01/31", "2019/02/01", "2019/02/02", "2019/02/03", "2019/02/04", "2019/02/05", "2019/02/06", "2019/02/07", "2019/02/08", "2019/02/09", "2019/02/10", "2019/02/11", "2019/02/12", "2019/02/13", "2019/02/14", "2019/02/15", "2019/02/16", "2019/02/17", "2019/02/18", "2019/02/19", "2019/02/20", "2019/02/21", "2019/02/22", "2019/02/23", "2019/02/24", "2019/02/25"], "amount": [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 41, 0, 0, 0, 0, 0, 0, 20, 0, 0, 42, 0], "order": [ 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0] };
+        var res;
+        $(function () {
+            $.get("/manager/right/?handler=data", function (data) {
+                res = data;
+       
+        var myChart = echarts.init(document.getElementById('statistics'), 'macarons');
+        option = {
+            tooltip: {
+                trigger: 'axis'
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    magicType: { show: true, type: ['line', 'bar'] },
+                    saveAsImage: { show: true }
+                }
+            },
+            calculable: true,
+            legend: {
+                data: ['浏览量', '用户量']
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    data: res.time
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value',
+                    name: '浏览量',
+                    axisLabel: {
+                        formatter: '{value}'
+                    }
+                },
+                {
+                    type: 'value',
+                    name: '用户量',
+                    axisLabel: {
+                        formatter: '{value}'
+                    }
+                }
+            ],
+            series: [
+                {
+                    name: '浏览量',
+                    type: 'bar',
+                    data: res.amount
+                },
+                {
+                    name: '用户量',
+                    type: 'line',
+                    yAxisIndex: 1,
+                    data: res.order
+                }
+            ]
+        };
+
+                myChart.setOption(option);
+            })
+        });
+    </script>
+</body>

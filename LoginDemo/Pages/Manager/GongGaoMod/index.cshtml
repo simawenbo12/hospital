@@ -1,0 +1,128 @@
+﻿@page
+@model LoginDemo.Pages.Manager.GongGaoMod.indexModel
+@{
+    ViewData["Title"] = "公告列表";
+}
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="~/dist/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="~/dist/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="~/dist/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="~/dist/css/animate.min.css" rel="stylesheet">
+    <link href="~/dist/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>公告列表</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-sm-9 m-b-xs">
+                                <a href="@Model._OperatingUrl" class="btn btn-primary">增加</a>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <form method="get">
+                                    <div class="input-group">
+                                        <input type="text" placeholder="请输入文章标题关键词" id="searchtitle" class="form-control">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-primary" onclick="Search()"> 搜索</button>
+                                        </span>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                       
+
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>公告标题</th>
+                                    <th>是否显示</th>
+                                    <th>添加时间</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var x in Model.GetTs)
+                                {
+                                    <tr>
+                                        <td>@x.Id</td>
+                                        <td>@x.Title</td>
+                                        <td>
+                                            @if (x.IsShow == 1)
+                                            {
+                                                <a class="toggleSale fa fa-check-circle text-info" style="font-size: 3rem;"></a>
+                                            }
+                                            else
+                                            {
+                                                <a class="toggleSale fa fa-times-circle text-danger" style="font-size: 3rem;"></a>
+                                            }
+                                        </td>
+
+                                        <td>@Help.HelpPageClass.HelpClass.ConvertToTime((uint)x.Addtime)</td>
+                                        <td>
+                                            <a href="/Manager/GongGaoMod/GongGaoRead/@x.Id" class="btn btn-success btn-xs" type="button">查看</a>
+                                            <a href="@Model._OperatingUrl/@x.Id" class="btn btn-warning btn-xs" type="button">编辑</a>
+                                            <button type="button" class="btn btn-danger btn-xs" onclick="Delete('@Model._thisUrl','Delete',@x.Id)">删除</button>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <pager page-data="@Model.PageData"></pager>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/dist/js/jquery.min.js?v=2.1.4"></script>
+    <script src="~/dist/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="~/dist/js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="~/dist/js/content.min.js?v=1.0.0"></script>
+    <script src="~/dist/js/plugins/iCheck/icheck.min.js"></script>
+    <script src="~/dist/js/demo/peity-demo.min.js"></script>
+    <script src="~/js/CZBJavaScript.js"></script>
+
+    <script>
+        $(document).ready(function () { $(".i-checks").iCheck({ checkboxClass: "icheckbox_square-green", radioClass: "iradio_square-green", }) });
+
+        $('.table-image').mouseover(function () {
+            $(this).next().show();
+        }).mouseout(function () {
+            $(this).next().hide();
+        });
+    </script>
+
+
+
+</body>
+
+
+<script>
+    function Search() {
+        let title = $('#searchtitle').val();
+        if (title.length > 0)
+            window.location.href = "/Manager/GongGaoMod/index/?handler=ByTitle&title=" + title;
+        else alert("不能空搜索");
+    }
+</script>

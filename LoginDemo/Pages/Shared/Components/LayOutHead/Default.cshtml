@@ -1,0 +1,58 @@
+﻿@model LayOutHomeNavigation
+<div class="navmain">
+    <div class="w1000 clearfix" id="J_Header" style="position:relative;">
+        <div class="nav clearfix">
+            <ul>
+                <li><a href="/home/home" >首页</a></li>
+                
+                @foreach (var x in Model.First)
+                {
+                <li class="j-subtop Navigation-@x.Id" tab="Navigation-@x.Id">
+                    @if (x.Id == Model.Navigation)
+                    {
+                        <a href="/home/Navigation/@x.Id" class="on">@x.Name </a>
+                    }
+                    else
+                    {
+                        <a href="/home/Navigation/@x.Id">@x.Name </a>
+                    }
+                </li>
+                }
+                
+            </ul>
+        </div>
+        <!--下拉导航-->
+        <div id="J_SubNav" class="m-subnav" style="font-family: 微软雅黑; display: none;">
+            <div class="inner" id="innerid" style="font-family: 微软雅黑;">          
+                @foreach (var x in Model.First)
+                {
+                    <div class="j-subnav Navigation-@x.Id" style="font-family: 微软雅黑; display: none;">
+                        <ul class="f-hd-nav1 f-oh">
+                            <li class="f-hd-nav1-li1">
+                                <a class="f-mg4 color1 f15-bdr" href="/home/Navigation/@x.Id" title="@x.Name" style="font-family: 微软雅黑;">
+                                    <img src="/jingfile/head_title.png" class="head_title">
+                                    @x.Name
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="f-ct-nav1 f-oh">
+                            <li class="f-ct-nav1-li1 f-oh" style="width: 130px;">
+                                <ul style="height: 230px;width:138px;margin-left: -30px;" class="f-mg5">
+                                    @foreach (var y in Model.Secend.FindAll(y => y.ParentId == x.Id))
+                                    {
+                                        <li class="f-mg4 f-ct-nav1-li1-ul1-li1">
+                                            <a class="f-ft2" href="/home/Navigation/@y.Id" title="@y.Name" style="font-family: 微软雅黑;">
+                                                <img src="/jingfile/head_nr_h.png" class="head_yyjs">
+                                                @y.Name
+                                            </a>
+                                        </li>
+                                    }
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

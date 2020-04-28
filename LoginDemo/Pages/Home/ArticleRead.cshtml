@@ -1,0 +1,155 @@
+﻿@page "{aid:int}/{articleid:int}"
+@model LoginDemo.Pages.Home.ArticleReadModel
+@{
+    ViewData["Title"] = "文章详情";
+}
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>汕头大学精神卫生中心</title>
+    <meta name="keywords" content="汕头大学精神卫生中心">
+    <meta name="description" content="汕头大学精神卫生中心">
+    <link rel="stylesheet" type="text/css" href="~/jingfile/basic.css">
+    <link href="~/dist/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/jingfile/style.css">
+    <link rel="stylesheet" type="text/css" href="~/jingfile/list.css">
+    <link rel="stylesheet" type="text/css" href="~/jingfile/animations.css">
+    <link rel="stylesheet" type="text/css" href="~/jingfile/tab.css">
+    <link rel="stylesheet" type="text/css" href="~/jingfile/page.css">
+    <script type="text/javascript" src="~/jingfile/jquery.js"></script>
+    <script type="text/javascript" src="~/jingfile/script.js"></script>
+    <script type="text/javascript" src="~/jingfile/jquery-1.7.1.js"></script>
+    <script type="text/javascript" src="~/jingfile/nav.js"></script>
+    <script type="text/javascript" src="~/jingfile/slide-js.js"></script>
+    <link rel="shortcuticon" href="http://www.stuh.com.cn/favicon.ico">
+</head>
+
+<body style="">
+    <script type="text/javascript" language="javascript">
+
+        //加入收藏
+
+        function AddFavorite(sURL, sTitle) {
+
+            sURL = encodeURI(sURL);
+            try {
+
+                window.external.addFavorite(sURL, sTitle);
+
+            } catch (e) {
+
+                try {
+
+                    window.sidebar.addPanel(sTitle, sURL, "");
+
+                } catch (e) {
+
+                    alert("加入收藏失败，亲的浏览器不支持自动设置，请使用Ctrl+D进行添加,或手动在浏览器里进行设置！");
+
+                }
+
+            }
+
+        }
+
+        //设为首页
+
+        function SetHome(url) {
+
+            if (document.all) {
+
+                document.body.style.behavior = 'url(#default#homepage)';
+
+                document.body.setHomePage(url);
+
+            } else {
+
+                alert("您好,您的浏览器不支持自动设置页面为首页功能,请您手动在浏览器里设置该页面为首页!");
+
+            }
+
+
+        }
+
+
+    </script>
+
+    <div id="wrap">
+        <!--顶部菜单栏-->
+        <!--主页logo 搜索栏-->
+        <div class="clearfix top2">
+            <div class="clearfix w1000">
+                <div class="logo fl">
+                    <a href="http://www.stuh.com.cn/"><img src="~/jingfile/logojing.png"></a>
+                </div>
+                <div class="fr top-form">
+                    <form action="http://www.stuh.com.cn/index.php" method="get" target="_blank">
+                        <input type="hidden" name="m" value="search">
+                        <input type="hidden" name="c" value="index">
+                        <input type="hidden" name="a" value="init">
+                        <input type="hidden" name="typeid" value="0" id="typeid">
+                        <input type="hidden" name="siteid" value="1" id="siteid">                  
+                    </form>
+                </div>
+            </div>
+        </div>
+        @await Component.InvokeAsync(nameof(Shared.Components.LayOutHead))
+        <!--头部-->
+        <!--首页内容-->
+        <!--头部-->
+        <div class="pagemain">
+            <div class="clearfix w1000">
+                <div class="page-banner"><img src="~/img/guanyu.png" /></div>
+                <div class="pagez clearfix">
+                    <div class="page-left fl">
+                        @await Component.InvokeAsync(nameof(Shared.Components.LayOutLeft))
+                    </div>
+                    <div class="fr page-right">
+                        <div class="pr-tops clearfix">
+                        </div>
+                        <div class="pagetext">
+                            <div class="page-texttop">
+                                <div class="title4">@Model.HmArticle.Title</div>
+                                <div class="title5">发布科室： &nbsp; 发布时间：@Help.HelpPageClass.HelpClass.ConvertToTime((uint)Model.HmArticle.Addtime)</div>
+                            </div>
+                            <div class="page-text">
+                                @Html.Raw(Model.HmArticle.Content)
+                            </div>
+                            <div class="newsb clearfix">
+                                <div class="fl">
+                                    <div class="new-content-btn clearfix">
+
+                                    </div>
+                                </div>
+                                <div class="fr fenxiang">
+                                    <div class="bdsharebuttonbox bdshare-button-style0-16" data-bd-bind="1551957967596"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+                                    <script>
+                                        window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "2", "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {}, "image": { "viewList": ["qzone", "tsina", "tqq", "renren", "weixin"], "viewText": "分享到：", "viewSize": "16" }, "selectShare": { "bdContainerClass": null, "bdSelectMiniList": ["qzone", "tsina", "tqq", "renren", "weixin"] } }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <!--首页内容-->
+        <!--底部-->
+        @await Component.InvokeAsync(nameof(Shared.Components.LayOutFoot))
+        <!--底部-->
+    </div>
+
+
+
+
+
+</body>

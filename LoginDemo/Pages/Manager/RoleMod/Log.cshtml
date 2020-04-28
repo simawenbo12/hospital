@@ -1,0 +1,75 @@
+﻿@page
+@model LoginDemo.Pages.Manager.RoleMod.LogModel
+@{
+    ViewData["Title"] = "日志";
+}
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="~/dist/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="~/dist/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="~/dist/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="~/dist/css/animate.min.css" rel="stylesheet">
+    <link href="~/dist/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>操作日志</h5>
+                    </div>
+                    <div class="ibox-content">
+
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>操作管理员名称</th>
+                                    <th>描述</th>
+                                    <th>ip</th>
+                                    <th>时间</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var x in Model.GetTs)
+                                {
+
+                                    <tr>
+                                        <td>@x.HmAdminLog.Id</td>
+                                        <td>@x.HmAdmin.Username</td>
+                                        <td>@x.HmAdminLog.LogInfo</td>
+                                        <td>@x.HmAdminLog.LogIp</td>
+                                        <td>@x.DateTime</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <pager page-data="@Model.PageData"></pager>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="~/dist/js/jquery.min.js?v=2.1.4"></script>
+<script src="~/dist/js/bootstrap.min.js?v=3.3.6"></script>
+<script src="~/dist/js/plugins/peity/jquery.peity.min.js"></script>
+<script src="~/dist/js/content.min.js?v=1.0.0"></script>
+<script src="~/dist/js/plugins/iCheck/icheck.min.js"></script>
+<script src="~/dist/js/demo/peity-demo.min.js"></script>
+<script src="~/js/CZBJavaScript.js"></script>

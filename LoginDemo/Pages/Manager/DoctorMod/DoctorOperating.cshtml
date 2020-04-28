@@ -1,0 +1,147 @@
+﻿@page "{id:int?}"
+@model LoginDemo.Pages.Manager.DoctorMod.DoctorOperatingModel
+@{
+    ViewData["Title"] = "医生操作";
+}
+<!DOCTYPE html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="~/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="~/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="~/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="~/css/animate.min.css" rel="stylesheet">
+    <link href="~/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>医生操作</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <form method="post" enctype="multipart/form-data" class="form-horizontal">
+                            <input asp-for="HmDoctor.Id" hidden />
+                            <input asp-for="HmDoctor.Image" hidden />
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">姓名</label>
+                                <div class="col-sm-10">
+                                    <input asp-for="HmDoctor.Name" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">图片</label>
+                                <div class="col-sm-10">
+                                    <input asp-for="UploadFile" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">性别</label>
+                                <div class="col-sm-10">
+                                    @if (Model.HmDoctor != null && Model.HmDoctor.Sex == 1)
+                                    {
+                                        <label><input name="HmDoctor.sex" type="radio" value="1" class="form-control" checked />男</label>
+                                        <label><input name="HmDoctor.sex" type="radio" value="0" class="form-control" />女</label>
+                                    }
+                                    else
+                                    {
+                                        <label><input name="HmDoctor.sex" type="radio" value="1" class="form-control" />男</label>
+                                        <label><input name="HmDoctor.sex" type="radio" value="0" class="form-control" checked />女</label>
+                                    }
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">学历</label>
+                                <div class="col-sm-10">
+                                    <select asp-for="SelecrP" asp-items="Model.SelectListItems" class="form-control"></select>
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">职称</label>
+                                <div class="col-sm-10">
+                                    <input asp-for="HmDoctor.Job" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">科室</label>
+                                <div class="col-sm-10">
+                                    <input asp-for="HmDoctor.Room" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">门诊科室</label>
+                                <div class="col-sm-10">
+                                    <input asp-for="HmDoctor.OpRoom" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">出诊时间</label>
+                                <div class="col-sm-10">
+                                    <input asp-for="HmDoctor.OpTime" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">个人简介</label>
+                                <div class="col-sm-10">
+                                    <textarea asp-for="HmDoctor.Description" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <button class="btn btn-primary" type="submit" id="button">保存内容</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="~/js/jquery.min.js?v=2.1.4"></script>
+    <script src="~/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="~/js/content.min.js?v=1.0.0"></script>
+    <script src="~/js/plugins/iCheck/icheck.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="__PUBLIC__/libs/global.js"></script>
+    <script>
+        $(document).ready(function () { $(".i-checks").iCheck({ checkboxClass: "icheckbox_square-green", radioClass: "iradio_square-green", }) });
+        function call_back(fileurl_tmp) {
+            $("#original_img").html('<img src="' + fileurl_tmp + '" alt="" style="height:34px">');
+            $('#original_img_input').val(fileurl_tmp);
+        }
+
+        $('.goods-image').mouseover(function () {
+            $(this).next().show();
+        }).mouseout(function () {
+            $(this).next().hide();
+        });
+    </script>
+
+</body>

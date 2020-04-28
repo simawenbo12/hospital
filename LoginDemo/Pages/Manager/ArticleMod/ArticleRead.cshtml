@@ -1,0 +1,12 @@
+﻿@page "{id:int}"
+@model LoginDemo.Pages.Manager.ArticleMod.ArticleReadModel
+@{
+    ViewData["Title"] = "查看文章";
+}
+<a class="button" href="/manager/ArticleMod/ArticleRead/@Model.HmArticle.Id/?handler=Export">导出</a>
+<h2>查看文章</h2>
+<p><label>文章标题 :</label> @Model.HmArticle.Title</p>
+<p><label>文章描述 :</label> @Model.HmArticle.Description</p>
+<p>文章内容</p>
+<p>@Html.Raw(Model.HmArticle.Content)</p>
+

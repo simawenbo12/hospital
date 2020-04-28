@@ -1,0 +1,175 @@
+﻿@page "{id:int?}"
+@model LoginDemo.Pages.Manager.GongGaoMod.GongGaoOperatingModel
+@{
+    ViewData["Title"] = "公告操作";
+}
+<!DOCTYPE html>
+
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="~/dist/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="~/dist/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="~/dist/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="~/dist/css/animate.min.css" rel="stylesheet">
+    <link href="~/dist/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+    <script src="~/js/jquery.min.js?v=2.1.4"></script>
+    <script src="~/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="~/js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="~/js/content.min.js?v=1.0.0"></script>
+    <script src="~/js/plugins/iCheck/icheck.min.js"></script>
+    <script src="~/js/demo/peity-demo.min.js"></script>
+    <script src="~/js/CZBJavaScript.js"></script>
+    <script src="~/ueditor/ueditor.config.js"></script>
+    <script src="~/ueditor/ueditor.all.js"></script>
+    <script src="~/ueditor/lang/zh-cn/zh-cn.js"></script>
+    <script src="~/js/jquery.min.js"></script>
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>公告操作</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <form method="post" class="form-horizontal">
+                            <input asp-for="HmGonggao.Id" hidden />
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">公告标题</label>
+                                <div class="col-sm-10">
+                                    <input asp-for="HmGonggao.Title" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">公告类型</label>
+                                <div class="col-sm-10">
+
+
+                                    @if (Model.HmGonggao != null && Model.HmGonggao.Type == 2)
+                                    {
+                                        <label><input name="HmArticle.Type" type="radio" value="1"  />通报</label>
+                                        <label><input name="HmArticle.Type" type="radio" value="2" checked />公示</label>
+                                    }
+                                    else
+                                    {
+                                        <label><input name="HmArticle.Type" type="radio" value="1" checked />通报</label>
+                                        <label><input name="HmArticle.Type" type="radio" value="2" />公示</label>
+                                    }
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">是否显示</label>
+                                <div class="col-sm-10">
+
+                                    <input type="checkbox" asp-for="ishow" />
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">公告时间</label>
+                                <div class="col-sm-10">
+
+
+                                    <input asp-for="DateTime" class="form-control"/>
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">发布单位</label>
+                                <div class="col-sm-10">
+                                    <input asp-for="HmGonggao.Tougao" class="form-control"/>
+
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">审批人</label>
+                                <div class="col-sm-10">
+                                    <input asp-for="HmGonggao.Shenpi" class="form-control"/>
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">文章描述</label>
+                                <div class="col-sm-10">
+
+                                    <textarea asp-for="HmGonggao.Description" class="form-control"></textarea>
+
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">公告详情</label>
+                                <div class="col-sm-10">
+                                    <script id="container" type="text/plain" style="width:1024px;height:500px;">
+                                        @if (Model.HmGonggao != null)
+                                        {
+                                            @Html.Raw(Model.HmGonggao.Content)
+                                        }
+
+                                    </script>
+
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <button class="btn btn-primary" type="submit">保存内容</button>
+                                    <button class="btn btn-white" type="button" onclick="history.back()">取消</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+    <script>
+        UE.getEditor('editor');
+        new Switchery(document.querySelector('.js-switch'));
+        $(document).ready(function () { $(".i-checks").iCheck({ checkboxClass: "icheckbox_square-green", radioClass: "iradio_square-green", }) });
+
+
+        /*
+         * 以下是图片上传方法
+         */
+        // 上传商品图片成功回调函数
+        function call_back(fileurl_tmp) {
+            $("#original_img").html('<img src="' + fileurl_tmp + '" alt="" style="height:34px">');
+            $('#original_img_input').val(fileurl_tmp);
+        }
+
+
+
+
+        $('.goods-image').mouseover(function () {
+            $(this).next().show();
+        }).mouseout(function () {
+            $(this).next().hide();
+        });
+
+    </script>
+
+</body>
+<script type="text/javascript">
+    //实例化编辑器
+    //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+    var ue = UE.getEditor('container');
+
+</script>

@@ -1,0 +1,123 @@
+﻿@model LayOutFootNavigation
+
+<div class="links-main">
+    <div class="links clearfix">
+        <div class="links-left fl"><img src="~/jingfile/btn1.png"></div>
+        <div class="bd fl clearfix">
+            <div class=" qimo8" id="demo">
+                <div class=" qimo">
+                    <div id="demo1">
+                        <ul>
+                            @foreach (var x in Model.HmSystemfriendlinks)
+                            {
+                                <li><a href="@x.Url" target="_blank">@x.Linkname</a></li>
+                            }
+                        </ul>
+                    </div>
+                    <div id="demo2">
+                        <ul>
+                            @foreach (var x in Model.HmSystemfriendlinks)
+                            {
+                                <li><a href="@x.Url" target="_blank">@x.Linkname</a></li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style type="text/css">
+            .qimo8 {
+                overflow: hidden;
+                width: 844px;
+            }
+
+                .qimo8 .qimo { /*width:99999999px;*/
+                    width: 8000%;
+                    height: 41px;
+                }
+
+                    .qimo8 .qimo div {
+                        float: left;
+                    }
+
+                    .qimo8 .qimo ul {
+                        float: left;
+                        height: 41px;
+                        overflow: hidden;
+                        zoom: 1;
+                    }
+
+                        .qimo8 .qimo ul li {
+                            float: left;
+                            line-height: 41px;
+                            list-style: none;
+                        }
+
+                .qimo8 li a {
+                    margin-right: 15px;
+                    color: #444444;
+                }
+        </style>
+        <script type="text/javascript">
+                      var demo = document.getElementById("demo");
+                        var demo1 = document.getElementById("demo1");
+                        var demo2 = document.getElementById("demo2");
+                        demo2.innerHTML = document.getElementById("demo1").innerHTML;
+                        function Marquee() {
+                            if (demo.scrollLeft - demo2.offsetWidth >= 0) {
+                                demo.scrollLeft -= demo1.offsetWidth;
+                            }
+                            else {
+                                demo.scrollLeft++;
+                            }
+                        }
+                        var myvar = setInterval(Marquee, 30);
+                        demo.onmouseout = function () { myvar = setInterval(Marquee, 30); }
+                        demo.onmouseover = function () { clearInterval(myvar); }
+        </script>
+    </div>
+</div>
+<!--底部备案-->
+<div class="footer clearfix">
+    <div class="w1000 clearfix">
+        <img src="~/jingfile/logo2.png" class="fl">
+        <div class="fl footer-right">
+            <div class="footer-nav clearfix">
+                <ul>
+                    <li style="padding-left:0px;">
+                    <a href="#">联系我们</a></li>
+                    <li><a href="#">远程工具</a></li>
+                    <li><a href="#">帮助信息</a></li>
+                    <li><a href="#">免责声明</a></li>
+                    <li><a href="#">网络反馈</a></li>
+                    <li><a href="#">网站地图</a></li>
+
+                </ul>
+            </div>
+            <div class="footer-text">
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td width="250">地址：@Model.HmSystemfoot.Address</td>
+                            <td align="right" width="80">总机：</td>
+                            <td width="250">@Model.HmSystemfoot.Phone</td>
+                        </tr>
+                        <tr>
+                            <td>邮编：@Model.HmSystemfoot.Zipcode</td>
+                            <td align="right">传真：</td>
+                            <td>@Model.HmSystemfoot.Faxphone</td>
+                        </tr>
+                        <tr>
+                            <td>邮箱：@Model.HmSystemfoot.Email</td>
+                            <td align="right">&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr color="#9fe2ff" size="1">
+                <div>@Model.HmSystemfoot.Footstr</div>
+            </div>
+            <br>
+        </div>
+    </div>
+</div>

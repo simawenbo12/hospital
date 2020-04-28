@@ -1,0 +1,574 @@
+﻿@page
+@model LoginDemo.Pages.Home.homeModel
+@{
+    ViewData["Title"] = "home";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>汕头大学精神卫生中心</title>
+<meta name="keywords" content="汕头大学精神卫生中心">
+<meta name="description" content="汕头大学精神卫生中心">
+<link rel="stylesheet" type="text/css" href="~/jingfile/basic.css">
+<link rel="stylesheet" type="text/css" href="~/jingfile/style.css">
+<link rel="stylesheet" type="text/css" href="~/jingfile/list.css">
+<link rel="stylesheet" type="text/css" href="~/jingfile/animations.css">
+<link rel="stylesheet" type="text/css" href="~/jingfile/tab.css">
+<link rel="stylesheet" type="text/css" href="~/jingfile/page.css">
+<script type="text/javascript" src="~/jingfile/jquery.js"></script>
+<script type="text/javascript" src="~/jingfile/script.js"></script>
+<script type="text/javascript" src="~/jingfile/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="~/jingfile/nav.js"></script>
+<script type="text/javascript" src="~/jingfile/slide-js.js"></script>
+<link rel="shortcuticon" href="http://www.stuh.com.cn/favicon.ico">
+</head>
+
+<body style="">
+    <partial name="_CookieConsentPartial" />
+    <script type="text/javascript" language="javascript">
+
+        //加入收藏
+
+        function AddFavorite(sURL, sTitle) {
+
+            sURL = encodeURI(sURL);
+            try {
+
+                window.external.addFavorite(sURL, sTitle);
+
+            } catch (e) {
+
+                try {
+
+                    window.sidebar.addPanel(sTitle, sURL, "");
+
+                } catch (e) {
+
+                    alert("加入收藏失败，亲的浏览器不支持自动设置，请使用Ctrl+D进行添加,或手动在浏览器里进行设置！");
+
+                }
+
+            }
+
+        }
+
+        //设为首页
+
+        function SetHome(url) {
+
+            if (document.all) {
+
+                document.body.style.behavior = 'url(#default#homepage)';
+
+                document.body.setHomePage(url);
+
+            } else {
+
+                alert("您好,您的浏览器不支持自动设置页面为首页功能,请您手动在浏览器里设置该页面为首页!");
+
+            }
+
+
+        }
+
+
+    </script>
+
+    <div id="wrap">
+        <!--顶部菜单栏-->
+        <!--主页logo 搜索栏-->
+        <div class="clearfix top2">
+            <div class="clearfix w1000">
+                <div class="logo fl">
+                    <a href="http://www.stuh.com.cn/"><img src="~/jingfile/logojing.png"></a>
+                </div>
+
+            </div>
+        </div>
+        @await Component.InvokeAsync(nameof(Shared.Components.LayOutHead))
+    
+
+        <!--头部-->    <!--首页内容-->
+        <div class="banner">
+            <div class="fullSlide">
+                <div class="bd">
+                    <ul style="position: relative; width: 1612px; height: 464px;">
+                        <li style="background: url(&quot;@Model.hmAdShouYe[0].Image&quot;) center 0px no-repeat; position: absolute; width: 1612px; left: 0px; top: 0px; display: none;"></li>
+                        <li style="background: url(&quot;@Model.hmAdShouYe[1].Image&quot;) center 0px no-repeat; position: absolute; width: 1612px; left: 0px; top: 0px; display: none;"></li>
+                        <li style="background: url(&quot;@Model.hmAdShouYe[2].Image&quot;) center 0px no-repeat; position: absolute; width: 1612px; left: 0px; top: 0px; display: none;"></li>
+                        <li style="background: url(&quot;@Model.hmAdShouYe[3].Image&quot;) center 0px no-repeat; position: absolute; width: 1612px; left: 0px; top: 0px; display: none;"></li>
+                        <li style="background: url(&quot;@Model.hmAdShouYe[4].Image&quot;) center 0px no-repeat; position: absolute; width: 1612px; left: 0px; top: 0px; display: list-item;"></li>
+
+                    </ul>
+                </div>
+                <div class="hd"><ul><li class="">1</li><li class="">2</li><li class="">3</li><li class="">4</li><li class="on">5</li></ul></div>
+            </div>
+            <script type="text/javascript">
+                jQuery(".fullSlide").hover(function () {
+                    jQuery(this).find(".prev,.next").stop(true, true).fadeTo("show", 0.5)
+                },
+                    function () {
+                        jQuery(this).find(".prev,.next").fadeOut()
+                    });
+                jQuery(".fullSlide").slide({
+                    titCell: ".hd ul",
+                    mainCell: ".bd ul",
+                    effect: "fold",
+                    autoPlay: true,
+                    autoPage: true,
+                    trigger: "click",
+                    startFun: function (i) {
+                        var curLi = jQuery(".fullSlide .bd li").eq(i);
+                        if (!!curLi.attr("_src")) {
+                            curLi.css("background-image", curLi.attr("_src")).removeAttr("_src")
+                        }
+                    }
+                });
+            </script>
+        </div>
+        <div class="index-main">
+
+            <div class="w1000">
+                <!--第一模块-->
+                <div class="c1">
+                    <!--新闻中心-->
+                    <div class="c1-left fl">
+                        <div class="c1-top clearfix">
+                            <div class="title-left fl">新闻中心</div>
+                            <div class="fr more-right">
+                                <a href="/home/Navigation/21" class="fr more-right">更多&gt;&gt;</a>
+                            </div>
+                        </div>
+                        <div class="c1n-bottom clearfix">
+                            <!--新闻中心图片幻灯片-->
+                            <div class="c1n-img fl">
+                                <div class="bd">
+                                    <div class="tempWrap" style="overflow:hidden; position:relative; width:305px">
+                                        <ul style="width: 1830px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: -566.88px;">                                          
+                                            @foreach (var x in Model.NewArticlesLunbo)
+                                            {
+                                            <li style="float: left; width: 305px;">
+                                                <a href="/home/ArticleRead/21/@x.Id" class="img1"><img src="@x.Image"></a>
+                                                <div class="img-title"><a href="/home/ArticleRead/21/@x.Id">@x.Title</a></div>
+                                            </li>
+                                            }                                                                      
+                                        </ul>
+                                    </div>
+                                </div>
+                                <a class="prev" href="javascript:void(0)"></a>
+                                <a class="next" href="javascript:void(0)"></a>
+                            </div>
+                            <script type="text/javascript">
+                                jQuery(".c1n-img").slide({ mainCell: ".bd ul", autoPlay: true, effect: "leftLoop" });
+                            </script>
+                            <!--新闻中心新闻列表-->
+                            <div class="c1n-list clearfix fl" style="width:315px;">
+                                <ul>
+                                    @foreach (var x in Model.NewArticles)
+                                    {
+                                    <li class="clearfix">
+                                        <font class="fr" style="font-family:&#39;微软雅黑&#39;; font-size:12px; color:#999999;">@Help.HelpPageClass.HelpClass.ConvertToTime((uint)x.Addtime).ToLongDateString().ToString()</font>
+                                        <a href="/home/ArticleRead/21/@x.Id" title="@x.Title">
+                                            @{
+                                                string temptitile = x.Title.Length > 13 ? x.Title.Substring(0, 13) + "..." : x.Title;
+                                                @temptitile
+                                            }
+                                        </a>
+                                    </li>
+                                    }
+                                  
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--招聘招标通知-->
+                    <div class="c1-right fr">
+                        <div id="tab">
+                            <h3 class="" id="two1" onmouseover="setContentTab(&#39;two&#39;,1,3)">招聘公告</h3>
+                            <div class="block" id="con_two_1" style="display: none;">
+                                <ul>
+                                    @foreach (var x in Model.RecruitmentArticles)
+                                    {
+                                    <li class="clearfix">
+                                        <font class="fr" style="font-family:&#39;微软雅黑&#39;; font-size:12px; color:#2895E0;">
+                                            @Help.HelpPageClass.HelpClass.ConvertToTime((uint)x.Addtime).ToLongDateString().ToString()
+                                        </font>
+                                        <a href="/home/ArticleRead/23/@x.Id"
+                                           title="@x.Title">
+                                            <font style="color:#2895E0;font-size:15px;font-weight:bold;">
+                                                @{
+                                                    string temptitile = x.Title.Length > 13 ? x.Title.Substring(0, 13) + "..." : x.Title;
+                                                    @temptitile
+                                                }
+                                            </font>
+                                        </a>
+                                    </li>
+                                    }
+                               
+                                </ul>
+                            </div>
+                            <h3 id="two2" onmouseover="setContentTab(&#39;two&#39;,2,3)" class="">招标公告</h3>
+                            <div id="con_two_2" style="display: none;">
+                                <ul>
+                                    @foreach (var x in Model.TenderArticles)
+                                    {
+                                    <li class="clearfix">
+                                        <font class="fr" style="font-family:&#39;微软雅黑&#39;; font-size:12px; color:#2895E0;">
+                                            @Help.HelpPageClass.HelpClass.ConvertToTime((uint)x.Addtime).ToLongDateString().ToString()
+                                        </font>
+                                        <a href="/home/ArticleRead/39/@x.Id"
+                                           title="@x.Title">
+                                            <font style="color:#2895E0;font-size:15px;font-weight:bold;">
+                                                @{
+                                                    string temptitile = x.Title.Length > 13 ? x.Title.Substring(0, 13) + "..." : x.Title;
+                                                    @temptitile
+                                                }
+                                            </font>
+                                        </a>
+                                    </li>
+                                    }
+                                </ul>
+                            </div>
+                            <h3 id="two3" onmouseover="setContentTab(&#39;two&#39;,3,3)" class="up">通知公告</h3>
+                            <div id="con_two_3" style="display: block;">
+                                <ul>
+                                    @foreach (var x in Model.NoticeArticles)
+                                    {
+                                        <li class="clearfix">
+                                            <font class="fr" style="font-family:&#39;微软雅黑&#39;; font-size:12px; color:#2895E0;">
+                                                @Help.HelpPageClass.HelpClass.ConvertToTime((uint)x.Addtime).ToLongDateString().ToString()
+                                            </font>
+                                            <a href="/home/ArticleRead/22/@x.Id"
+                                               title="@x.Title">
+                                                <font style="color:#2895E0;font-size:15px;font-weight:bold;">
+                                                    @{
+                                                        string temptitile = x.Title.Length > 13 ? x.Title.Substring(0, 13) + "..." : x.Title;
+                                                        @temptitile
+                                                    }
+                                                </font>
+                                            </a>
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    function setContentTab(name, curr, n) {
+                        for (i = 1; i <= n; i++) {
+                            var menu = document.getElementById(name + i);
+                            var cont = document.getElementById("con_" + name + "_" + i);
+                            menu.className = i == curr ? "up" : "";
+                            if (i == curr) {
+                                cont.style.display = "block";
+                            } else {
+                                cont.style.display = "none";
+                            }
+                        }
+                    }
+                </script>
+                <!--专家推荐-->
+                <div class="c2">
+                    <div class="c1-top clearfix">
+                        <div class="title-left fl">
+                            专家推荐
+                        </div>
+                        <a href="#" class="fr more-right"></a>
+                    </div>
+                    <div class="c2-slide clearfix">
+                        <div class="bd">
+                            <div class="tempWrap" style="overflow:hidden; position:relative; width:994px">
+                                <ul style="width: 13490px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: -1317px;">
+                                    @foreach (var x in Model.HmDoctors)
+                                    {
+                                        <li style="float: left; width: 122px;">
+                                            <a href="/home/doctor/@x.Id" class="c2-img"><img src="@x.Image"></a>
+                                            <div class="c2-text1"><a href="/home/doctor/@x.Id">@x.Name</a></div>
+                                            <div class="c2-text2">
+                                                <b>职称：</b>@x.Job<br>
+                                                <b>科室：</b>@x.Room
+                                            </div>
+                                        </li>
+                                    }
+
+                                </ul>
+                            </div>
+                        </div>
+                        <script>jQuery(".c2-slide").slide({ mainCell: ".bd ul", autoPlay: true, effect: "leftMarquee", vis: 7, interTime: 20, trigger: "click" });</script>
+                    </div>
+                </div>
+                <div class="c3 clearfix">
+                    <!--名医名项-->
+                    <div class="c3-left fl">
+                        <div class="c1-top clearfix">
+                            <div class="title-left fl">
+                                名医名项
+                            </div>
+                            <a href="/home/Navigation/37" class="fr more-right">更多&gt;&gt;</a>
+                        </div>
+                        <div class="c1n-list clearfix" style="padding-left:0px;margin-top:15px;">
+                            <ul>
+                                @foreach (var x in Model.GoodDoctorArticles)
+                                {
+                                  <li class="clearfix">
+                                <font class="fr" style="font-family:&#39;微软雅黑&#39;; font-size:12px; color:#999999;">@Help.HelpPageClass.HelpClass.ConvertToTime((uint)x.Addtime).ToLongDateString().ToString()</font>
+                                <a href="/home/ArticleRead/37/@x.Id">@x.Title</a></li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                    <!--医护天地-->
+                    <div class="fr c3-right">
+                        <div class="c1-top clearfix">
+                            <div class="title-left fl">
+                                医护天地
+                            </div>
+                            <a href="/home/Navigation/33" class="fr more-right">更多&gt;&gt;</a>
+                        </div>
+                        <div class="c3r-main clearfix" style="margin-top:15px;">
+                            @foreach (var x in Model.MedicalArticles)
+                            {
+                                <div class="clearfix c3r-list">
+                                    <div class="fl c3r-img">
+                                        <a href="/home/ArticleRead/33/@x.Id"><img src="@x.Image"></a>
+                                    </div>
+                                    <div class="fr c3r-text">
+                                        <div class="c3r-title clearfix">
+                                        <font class="fr" style="font-family:&#39;微软雅黑&#39;; font-size:12px; color:#999999;">
+                                            @Help.HelpPageClass.HelpClass.ConvertToTime((uint)x.Addtime).ToLongDateString().ToString()
+                                        </font>
+                                        <a href="/home/ArticleRead/33/@x.Id">@x.Title</a></div>
+                                        <div class="c3r-text2">
+                                         <a href="/home/ArticleRead/33/@x.Id">@x.Description</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="c4 clearfix">
+                    <!--出诊信息-->
+                    <div class="c3-left fl">
+                        <div class="c1-top clearfix">
+                            <div class="title-left fl">出诊信息</div>
+                        </div>
+                        <div class="c4r-slide clearfix">
+                            <div class="bd">
+                                <div class="tempWrap" style="overflow:hidden; position:relative; height:224px">
+                                    <ul style="height: 1652px; position: relative; padding: 0px; margin: 0px; top: -1244px;">
+                                        @foreach (var x in Model.HmDoctors)
+                                        {
+                                            <li class="clearfix " style="height: 28px;">
+                                                <div class="czxx fl">
+                                                    <a href="/home/doctor/@x.Id">
+                                                        @x.Name
+                                                    </a>
+                                                </div><div style="width:90px;" class="fl">
+                                                    @x.Job
+                                                </div><div style="width:120px;" class="fl">@x.Room</div><div style="width:170px;" class="fl">
+                                                    出诊时间：@x.OpTime
+                                                </div>
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <script>jQuery(".c4r-slide").slide({ mainCell: ".bd ul", autoPlay: true, effect: "topMarquee", vis: 8, interTime: 50, trigger: "click" });</script>
+                    </div>
+                    <!--专题专栏-->
+                    <div class="c3-right fr">
+                        <div class="c1-top clearfix">
+                            <div class="title-left fl">党建专栏</div>
+                        </div>
+                        <div class="c4r-main clearfix">
+                            <ul>
+                                <li class="d1">
+                                    <a href="/home/Navigation/26" title="热烈庆祝建党95周年"></a>
+                                </li>
+                                <li class="d2">
+                                    <a href="/home/Navigation/28" title="党风廉政建设"></a>
+                                </li>
+                                <li class="d3">
+                                    <a href="https://www.xuexi.cn/" title="三严三实专题栏目"></a>
+                                </li>
+                                <li class="d4">
+                                    <a href="/home/Navigation/31" title="青年文明号"></a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <!--广告-->
+        <script type="text/javascript">
+            function addEvent(obj, evtType, func, cap) {
+                cap = cap || false;
+                if (obj.addEventListener) {
+                    obj.addEventListener(evtType, func, cap);
+                    return true;
+                } else if (obj.attachEvent) {
+                    if (cap) {
+                        obj.setCapture();
+                        return true;
+                    } else {
+                        return obj.attachEvent("on" + evtType, func);
+                    }
+                } else {
+                    return false;
+                }
+            }
+            function getPageScroll() {
+                var xScroll, yScroll;
+                if (self.pageXOffset) {
+                    xScroll = self.pageXOffset;
+                } else if (document.documentElement && document.documentElement.scrollLeft) {
+                    xScroll = document.documentElement.scrollLeft;
+                } else if (document.body) {
+                    xScroll = document.body.scrollLeft;
+                }
+                if (self.pageYOffset) {
+                    yScroll = self.pageYOffset;
+                } else if (document.documentElement && document.documentElement.scrollTop) {
+                    yScroll = document.documentElement.scrollTop;
+                } else if (document.body) {
+                    yScroll = document.body.scrollTop;
+                }
+                arrayPageScroll = new Array(xScroll, yScroll);
+                return arrayPageScroll;
+            }
+            function GetPageSize() {
+                var xScroll, yScroll;
+                if (window.innerHeight && window.scrollMaxY) {
+                    xScroll = document.body.scrollWidth;
+                    yScroll = window.innerHeight + window.scrollMaxY;
+                } else if (document.body.scrollHeight > document.body.offsetHeight) {
+                    xScroll = document.body.scrollWidth;
+                    yScroll = document.body.scrollHeight;
+                } else {
+                    xScroll = document.body.offsetWidth;
+                    yScroll = document.body.offsetHeight;
+                }
+                var windowWidth, windowHeight;
+                if (self.innerHeight) {
+                    windowWidth = self.innerWidth;
+                    windowHeight = self.innerHeight;
+                } else if (document.documentElement && document.documentElement.clientHeight) {
+                    windowWidth = document.documentElement.clientWidth;
+                    windowHeight = document.documentElement.clientHeight;
+                } else if (document.body) {
+                    windowWidth = document.body.clientWidth;
+                    windowHeight = document.body.clientHeight;
+                }
+                if (yScroll < windowHeight) {
+                    pageHeight = windowHeight;
+                } else {
+                    pageHeight = yScroll;
+                }
+                if (xScroll < windowWidth) {
+                    pageWidth = windowWidth;
+                } else {
+                    pageWidth = xScroll;
+                }
+                arrayPageSize = new Array(pageWidth, pageHeight, windowWidth, windowHeight)
+                return arrayPageSize;
+            }
+
+            var AdMoveConfig = new Object();
+            AdMoveConfig.IsInitialized = false;
+            AdMoveConfig.ScrollX = 0;
+            AdMoveConfig.ScrollY = 0;
+            AdMoveConfig.MoveWidth = 0;
+            AdMoveConfig.MoveHeight = 0;
+            AdMoveConfig.Resize = function () {
+                var winsize = GetPageSize();
+                AdMoveConfig.MoveWidth = winsize[2];
+                AdMoveConfig.MoveHeight = winsize[3];
+                AdMoveConfig.Scroll();
+            }
+            AdMoveConfig.Scroll = function () {
+                var winscroll = getPageScroll();
+                AdMoveConfig.ScrollX = winscroll[0];
+                AdMoveConfig.ScrollY = winscroll[1];
+            }
+            addEvent(window, "resize", AdMoveConfig.Resize);
+            addEvent(window, "scroll", AdMoveConfig.Scroll);
+            function AdMove(id) {
+                if (!AdMoveConfig.IsInitialized) {
+                    AdMoveConfig.Resize();
+                    AdMoveConfig.IsInitialized = true;
+                }
+                var obj = document.getElementById(id);
+                obj.style.position = "absolute";
+                var W = AdMoveConfig.MoveWidth - obj.offsetWidth;
+                var H = AdMoveConfig.MoveHeight - obj.offsetHeight;
+                var x = W * Math.random(), y = H * Math.random();
+                var rad = (Math.random() + 1) * Math.PI / 6;
+                var kx = Math.sin(rad), ky = Math.cos(rad);
+                var dirx = (Math.random() < 0.5 ? 1 : -1), diry = (Math.random() < 0.5 ? 1 : -1);
+                var step = 1;
+                var interval;
+                this.SetLocation = function (vx, vy) { x = vx; y = vy; }
+                this.SetDirection = function (vx, vy) { dirx = vx; diry = vy; }
+                obj.CustomMethod = function () {
+                    obj.style.left = (x + AdMoveConfig.ScrollX) + "px";
+                    obj.style.top = (y + AdMoveConfig.ScrollY) + "px";
+                    rad = (Math.random() + 1) * Math.PI / 6;
+                    W = AdMoveConfig.MoveWidth - obj.offsetWidth;
+                    H = AdMoveConfig.MoveHeight - obj.offsetHeight;
+                    x = x + step * kx * dirx;
+                    if (x < 0) { dirx = 1; x = 0; kx = Math.sin(rad); ky = Math.cos(rad); }
+                    if (x > W) { dirx = -1; x = W; kx = Math.sin(rad); ky = Math.cos(rad); }
+                    y = y + step * ky * diry;
+                    if (y < 0) { diry = 1; y = 0; kx = Math.sin(rad); ky = Math.cos(rad); }
+                    if (y > H) { diry = -1; y = H; kx = Math.sin(rad); ky = Math.cos(rad); }
+                }
+                this.Run = function () {
+                    var delay = 10;
+                    interval = setInterval(obj.CustomMethod, delay);
+                    obj.onmouseover = function () { clearInterval(interval); }
+                    obj.onmouseout = function () { interval = setInterval(obj.CustomMethod, delay); }
+                }
+            }
+        </script>
+
+        <div id="ad1" style="z-index: 5; position: absolute; left: 371.371px; top: 262.243px;">
+            <!--漂浮开始-->
+            <!--漂浮结束-->
+        </div>
+        <div id="ad2" style="z-index: 5; position: absolute; left: 242.682px; top: 200.154px;">
+            <!--漂浮开始-->
+            <!--漂浮结束-->
+        </div>
+        <script type="text/javascript">
+<!--
+            var ad1 = new AdMove("ad1");
+            ad1.Run();
+            var ad2 = new AdMove("ad2");
+            ad2.Run();
+            -->
+        </script>
+
+        <!--首页内容-->
+        <!--底部-->
+       @await Component.InvokeAsync(nameof(Shared.Components.LayOutFoot))
+        <!--底部-->
+    </div>
+
+
+
+
+
+</body>
+

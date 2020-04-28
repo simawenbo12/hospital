@@ -1,0 +1,122 @@
+﻿@page "{id:int?}"
+@model LoginDemo.Pages.Manager.RoleMod.RoleOperatingModel
+@{
+    ViewData["Title"] = "角色列表操作";
+}
+<!DOCTYPE html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="~/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="~/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="~/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="~/css/animate.min.css" rel="stylesheet">
+    <link href="~/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>角色管理</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <form method="post" class="form-horizontal">
+                            <input asp-for="GetT.Id" hidden />
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">角色名</label>
+
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" asp-for="GetT.Name" required>
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+
+
+                            @foreach (var f in Model.First)
+                            {
+                                <div class="form-group">
+                                    <div class="col-sm-2 text-center">
+                                        <div class="checkbox checkbox-info checkbox-inline checkbox-circle">
+
+                                            <label> @f.Name </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-10" style="border-left:1px dashed #e7eaec">
+
+
+
+                                        @foreach (var s in Model.Secend)
+                                        {
+                                            @if (f.Id == s.ParentId)
+                                            {
+                                                @if (Model.SelectRole != null && Help.HelpPageClass.HelpClass.isCheckByRole(Model.SelectRole, s.Id))
+                                                {
+                                        <div class="col-sm-2">
+
+                                            <input type="checkbox" name="@nameof(Model.Roles)" value="@s.Id" class="power_parent_id_@s.Id"checked />
+                                            <label > @s.Name </label>
+                                        </div>
+                                                }
+                                                else
+                                                {
+                                        <div class="col-sm-2">
+                                            <input type="checkbox" name="@nameof(Model.Roles)" class="power_parent_id_@s.Id" value="@s.Id" />
+                                            <label > @s.Name </label>
+                                        </div>
+                                                        }
+
+                                                        }
+                                                        }
+
+                                                    </div>
+                                                </div>
+                                <div class="hr-line-dashed"></div>
+
+                            }
+
+
+                            <div class="form-group">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <button class="btn btn-primary" type="submit">保存内容</button>
+                                    <button class="btn btn-white" type="button" onclick="history.back()">取消</button>
+                                </div>
+                            </div>
+                           
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="~/js/jquery.min.js?v=2.1.4"></script>
+    <script src="~/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="~/js/content.min.js?v=1.0.0"></script>
+    <script src="~/js/plugins/iCheck/icheck.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="__PUBLIC__/libs/global.js"></script>
+    <script>
+        $(document).ready(function () { $(".i-checks").iCheck({ checkboxClass: "icheckbox_square-green", radioClass: "iradio_square-green", }) });
+        function call_back(fileurl_tmp) {
+            $("#original_img").html('<img src="' + fileurl_tmp + '" alt="" style="height:34px">');
+            $('#original_img_input').val(fileurl_tmp);
+        }
+
+        $('.goods-image').mouseover(function () {
+            $(this).next().show();
+        }).mouseout(function () {
+            $(this).next().hide();
+        });
+    </script>
+
+</body>

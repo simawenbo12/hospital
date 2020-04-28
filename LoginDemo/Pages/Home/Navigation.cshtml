@@ -1,0 +1,142 @@
+﻿@page "{aid:int}"
+@model LoginDemo.Pages.Home.NavigationModel
+@{
+    ViewData["Title"] = "Navigation";
+}
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>汕头大学精神卫生中心</title>
+    <meta name="keywords" content="汕头大学精神卫生中心">
+    <meta name="description" content="汕头大学精神卫生中心">
+    <link rel="stylesheet" type="text/css" href="~/jingfile/basic.css">
+    <link href="~/dist/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/jingfile/style.css">
+    <link rel="stylesheet" type="text/css" href="~/jingfile/list.css">
+    <link rel="stylesheet" type="text/css" href="~/jingfile/animations.css">
+    <link rel="stylesheet" type="text/css" href="~/jingfile/tab.css">
+    <link rel="stylesheet" type="text/css" href="~/jingfile/page.css">
+    <script type="text/javascript" src="~/jingfile/jquery.js"></script>
+    <script type="text/javascript" src="~/jingfile/script.js"></script>
+    <script type="text/javascript" src="~/jingfile/jquery-1.7.1.js"></script>
+    <script type="text/javascript" src="~/jingfile/nav.js"></script>
+    <script type="text/javascript" src="~/jingfile/slide-js.js"></script>
+    <link rel="shortcuticon" href="http://www.stuh.com.cn/favicon.ico">
+</head>
+
+<body style="">
+    <script type="text/javascript" language="javascript">
+
+        //加入收藏
+
+        function AddFavorite(sURL, sTitle) {
+
+            sURL = encodeURI(sURL);
+            try {
+
+                window.external.addFavorite(sURL, sTitle);
+
+            } catch (e) {
+
+                try {
+
+                    window.sidebar.addPanel(sTitle, sURL, "");
+
+                } catch (e) {
+
+                    alert("加入收藏失败，亲的浏览器不支持自动设置，请使用Ctrl+D进行添加,或手动在浏览器里进行设置！");
+
+                }
+
+            }
+
+        }
+
+        //设为首页
+
+        function SetHome(url) {
+
+            if (document.all) {
+
+                document.body.style.behavior = 'url(#default#homepage)';
+
+                document.body.setHomePage(url);
+
+            } else {
+
+                alert("您好,您的浏览器不支持自动设置页面为首页功能,请您手动在浏览器里设置该页面为首页!");
+
+            }
+
+
+        }
+
+
+    </script>
+
+    <div id="wrap">
+        <!--顶部菜单栏-->
+        <!--主页logo 搜索栏-->
+        <div class="clearfix top2">
+            <div class="clearfix w1000">
+                <div class="logo fl">
+                    <a href="http://www.stuh.com.cn/"><img src="~/jingfile/logojing.png"></a>
+                </div>
+            
+            </div>
+        </div>
+        @await Component.InvokeAsync(nameof(Shared.Components.LayOutHead))
+        <!--头部-->
+        <!--首页内容-->
+        <!--头部-->
+        <div class="pagemain">
+            <div class="clearfix w1000">
+                <div class="page-banner"><img src="~/img/guanyu.png" /></div>
+                <div class="pagez clearfix">
+                    <div class="page-left fl">
+                        @await Component.InvokeAsync(nameof(Shared.Components.LayOutLeft))
+                    </div>
+                    <div class="fr page-right">
+                        <div class="pr-tops clearfix">
+
+                        </div>
+                        <div class="pagetext">
+                            <div class="listsn clearfix">
+                                <ul>
+                                    <!--文章-->
+                                    @if (Model.HmArticle_Reviews != null && Model.HmArticle_Reviews.Count != 0)
+                                    {
+                                        @foreach (var x in Model.HmArticle_Reviews)
+                                        {
+                                           @if (x.hmReview.Review == 2)
+                                           {
+                                            <li>
+                                                <font class="fr">@Help.HelpPageClass.HelpClass.ConvertToTime((uint)x.HmArticle.Addtime)</font>
+                                                <a href="/home/ArticleRead/@Model.Aid/@x.HmArticle.Id">@x.HmArticle.Title</a>
+                                            </li>
+                                           }
+                                        }
+                                    }
+                                    </ul>
+                            </div>
+                                <!--翻页-->
+                                    <pager page-data="Model.PageData"></pager>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--首页内容-->
+        <!--底部-->
+    @await Component.InvokeAsync(nameof(Shared.Components.LayOutFoot))
+        <!--底部-->
+    </div>
+
+
+
+
+
+</body>

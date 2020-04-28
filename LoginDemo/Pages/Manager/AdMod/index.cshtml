@@ -1,0 +1,153 @@
+﻿@page
+@model LoginDemo.Pages.Manager.AdModel
+@{
+    ViewData["Title"] = "图片列表";
+}
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="shortcut icon" href="favicon.ico"> <link href="~/dist/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+<link href="~/dist/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+<link href="~/dist/css/plugins/iCheck/custom.css" rel="stylesheet">
+<link href="~/dist/css/animate.min.css" rel="stylesheet">
+<link href="~/dist/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>图片列表</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <a type="button" href="@Model._OperatingUrl" class="btn btn-primary">增加</a>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>图片名称</th>
+                        
+                                    <th>图片</th>
+                                    <th>图片位置</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var x in Model.HmAdTempModels)
+                                {
+                                    <!---  <tr>
+                                            <td>@Html.DisplayFor(temp => x.HmAd.Id)</td>
+                                            <td>@Html.DisplayFor(temp => x.HmAd.Name)</td>
+                                            <td>@Html.DisplayFor(temp => x.HmAd.Url)</td>
+                                            <td><img src="@x.HmAd.Image" height="50" width="100" /></td>
+                                            <td>@Html.DisplayFor(temp => x.HmAdPosition.Name)</td>
+                                            <td>
+                                                <button type="button" class="btn btn-info btn-sm" onclick="window.location.href='@Model._OperatingUrl/@x.HmAd.Id'">编辑</button>
+                                                <button type="button" class="btn btn-danger btn-sm" onclick="Delete('@Model._thisUrl','Delete',@x.HmAd.Id)">删除</button>
+                                            </td>
+                                        </tr>
+                                    }
+                                    <foreach name="list" item="item">-->
+                                    <tr>
+                                        <td>@Html.DisplayFor(temp => x.HmAd.Id)</td>
+                                        <td>@Html.DisplayFor(temp => x.HmAd.Name)</td>
+                                       
+                                        <td style="position: relative;">
+                                            <img src="@x.HmAd.Image" alt="" class="table-image" height="34px">
+                                            <div style="position:absolute;top:0;left:65px;display:none;border: 1px solid #ccc;"><img src="@x.HmAd.Image" alt="" style="max-width: 500px"></div>
+                                        </td>
+                                        <td>@Html.DisplayFor(temp => x.HmAdPosition.Name)</td>
+                                        <td>
+                                            <a href="@Model._OperatingUrl/@x.HmAd.Id" class="btn btn-warning btn-xs" type="button">编辑</a>
+                                            <a type="button" class="btn btn-danger btn-xs" onclick="Delete('@Model._thisUrl','Delete',@x.HmAd.Id)">删除</a>
+                                            <!-- <a onclick="Delete('@Model._thisUrl','Delete',@x.HmAd.Id)" class="btn btn-danger btn-xs">删除</a>-->
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <pager page-data="@Model.PageData"></pager>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/dist/js/jquery.min.js?v=2.1.4"></script>
+    <script src="~/dist/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="~/dist/js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="~/dist/js/content.min.js?v=1.0.0"></script>
+    <script src="~/dist/js/plugins/iCheck/icheck.min.js"></script>
+    <script src="~/dist/js/demo/peity-demo.min.js"></script>
+    <script src="~/js/CZBJavaScript.js"></script>
+
+    <script>
+        $(document).ready(function () { $(".i-checks").iCheck({ checkboxClass: "icheckbox_square-green", radioClass: "iradio_square-green", }) });
+
+        $('.table-image').mouseover(function () {
+            $(this).next().show();
+        }).mouseout(function () {
+            $(this).next().hide();
+        });
+    </script>
+
+
+
+</body>
+
+<!--<h2>广告列表</h2>
+<div class="row">
+    <div class="col-lg-2">
+        <button type="button" class="btn btn-primary" onclick="window.location.href='@Model._OperatingUrl'">添加</button>
+    </div>
+</div>
+@if (Model.HmAdTempModels != null && Model.HmAdTempModels.Count != 0)
+{
+    <table class="table" style="height:500px">
+        <thead>
+            <tr>
+                <th><label asp-for="GetT.Id"></label></th>
+                <th><label asp-for="GetT.Name"></label></th>
+                <th><label asp-for="GetT.Url"></label></th>
+                <th><label asp-for="GetT.Image"></label></th>
+                <th><label asp-for="GetT.PositionId"></label></th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var x in Model.HmAdTempModels)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(temp => x.HmAd.Id)</td>
+                    <td>@Html.DisplayFor(temp => x.HmAd.Name)</td>
+                    <td>@Html.DisplayFor(temp => x.HmAd.Url)</td>
+                    <td><img src="@x.HmAd.Image" height="50" width="100" /></td>
+                    <td>@Html.DisplayFor(temp => x.HmAdPosition.Name)</td>
+                    <td>
+                        <button type="button" class="btn btn-info btn-sm" onclick="window.location.href='@Model._OperatingUrl/@x.HmAd.Id'">编辑</button>
+                        <button type="button" class="btn btn-danger btn-sm" onclick="Delete('@Model._thisUrl','Delete',@x.HmAd.Id)">删除</button>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+    <pager page-data="@Model.PageData"></pager>
+}
+else
+{
+    <h1>找不到数据,请重试</h1>
+}
+
+    -->

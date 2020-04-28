@@ -1,0 +1,29 @@
+﻿@model LayOutLeftNavigation
+
+<div class="page-nav">
+    <div class="page-title">@Model.HmArticleCategory.Name</div>
+    <!--左侧标签栏-->
+    <ul>
+        @if (Model.isZero)
+        {
+            <li class="on"><a href="/home/Navigation/@Model.HmArticleCategory.Id">@Model.HmArticleCategory.Name 动态</a></li>
+        }
+        else
+        {
+            <li><a href="/home/Navigation/@Model.HmArticleCategory.Id">@Model.HmArticleCategory.Name 动态</a></li>
+        }
+
+        @foreach (var x in Model.HmArticleCategories)
+        {
+            if (x.Id == Model.Aid)
+            {
+                <li class="on"><a href="/home/Navigation/@x.Id">@x.Name</a></li>
+            }
+            else
+            {
+                <li><a href="/home/Navigation/@x.Id">@x.Name</a></li>
+            }
+        }
+
+    </ul>
+</div>

@@ -1,0 +1,127 @@
+html,body, div, p, ul, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, form, input, select, button, textarea, iframe, table, th, td {
+	margin: 0;
+	padding: 0;
+	outline:none;}
+table{border-collapse:collapse;border-spacing:0;border:0;}
+body{Font-size=62.5%,"Arial Narrow",HELVETICA; text-align:center; line-height:1.2;}
+/*A*/
+a{text-decoration:none;}
+a:hover{text-decoration:none;}
+/*img*/
+img{border:0 none; vertical-align:top;}
+/*li*/
+ul,li{list-style-type:none;}
+/*浮动*/
+.fl{float:left;
+	display:inline;}
+.fr{float:right;
+	display:inline;}
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	content: " ";
+	clear: both;
+	height: 0;
+	line-height: 0;}
+.clearfix {zoom: 1;}
+a{blr:expression(this.onFocus=this.close());}
+a{blr:expression(this.onFocus=this.blur());}
+a:focus { -moz-outline-style: none; }
+a:focus { outline: none; }
+.clear{clear:both;}
+/*wrap*/
+#wrap{text-align:left;}
+/*宽度*/
+.w1000{
+	width:1000px;
+	margin:0 auto;
+	zoom:1;}
+.w1252{
+	width:1252px;
+	margin:0 auto;
+	zoom:1;}
+.w1270{
+	width:1270px;
+	margin:0 auto;
+	zoom:1;}
+.w1260{
+	width:1260px;
+	margin:0 auto;
+	zoom:1;
+	background-color:#2B96E0;}
+.w980{
+	width:980px;
+	margin:0 auto;
+	zoom:1;}
+.mb-none{
+	margin-bottom:0px;}
+.mr-none{
+	margin-right:0px !important;}
+.border{
+	border:none !important}
+/*button*/
+button{ cursor:pointer;}
+/*i,em重置*/i,em{ font-style:normal;}
+/*分页css*/
+/*
+.page a{	display:inline-block;
+	height:40px;
+	padding-left:6px;
+	padding-right:6px;
+	font-family:Arial;
+	font-size:12px;
+	line-height:40px;
+	color:#5d4d3c;}
+.page{
+    padding: 15px 20px;
+	text-align: left;
+	color: #ccc;text-align:center;}
+.page a:hover{
+	color:#a98644;}
+.page a.on{
+	color:#a98644;}
+.page span{
+	display:inline-block;
+	height:40px;
+	line-height:40px;
+	padding-left:6px;
+	padding-right:6px;
+	font-family:Arial;
+	font-size:12px;
+	color:#a98644;}
+.page a.prev{
+	background:url(../images/left1.png) no-repeat;
+	width:40px;
+	height:40px;
+	text-indent:-9999px;
+	border:none;
+	padding:0px;}
+.page a.next{
+	padding:0px;
+	background:url(../images/right1.png) no-repeat;
+	width:40px;
+	height:40px;
+	text-indent:-9999px;
+	border:none;}
+.page a.prev:hover{
+	opacity:0.9;}
+.page a.next:hover{
+	opacity:0.9;}
+*/
+.newt-b>div.newt-b-left:nth-child(2n){
+	margin-right:0px;}
+/**
+==========================================
+<div class="page">
+	<a href="#">上一页</a>
+	<a href="#" class="on">1</a>
+	<a href="#">2</a>
+	<a href="#">3</a>
+	<a href="#">4</a>
+	<span>...</span>
+	<a href="#">15</a>
+	<a href="#">16</a>
+	<a href="#">下一页</a>
+</div>
+==========================================
+**/

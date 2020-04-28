@@ -1,0 +1,136 @@
+﻿@page
+@model LoginDemo.Pages.Manager.SystemManager.SystemFootModel
+@{
+    ViewData["Title"] = "网站底部设置";
+}
+
+<!DOCTYPE html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="~/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="~/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="~/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="~/css/animate.min.css" rel="stylesheet">
+    <link href="~/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>网站底部设置</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <form method="post" class="form-horizontal" enctype="multipart/form-data">
+                            <input asp-for="GetT.Id" hidden />
+
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">邮箱</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" asp-for="GetT.Email" required>
+                                </div>
+                            </div>
+
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">底部logo<font style="font-size:12px;color:red">(建议尺寸：880*360)</font></label>
+                                <div class="col-sm-3" id="file-pretty">
+                                    <div class="input-append input-group">
+                                        <span class="input-group-btn">
+                                            <input class="btn btn-white" asp-for="UploadFile">
+                                            <input asp-for="GetT.Logo" hidden />
+                                            <!-- <button class="btn btn-white" type="button" onclick="GetUploadify(1,'','','call_back');">选择文件</button>-->
+                                        </span>
+                                        <!--put class="input-large form-control" id="original_img_input" type="text" name="image" value="{$info.image}">-->
+                                    </div>
+                                </div>
+                                <div class="col-sm-1" id="original_img" style="position: relative;">
+                                    <if condition="$info['image']">
+                                        <img src="{$info.image}" alt="" class="goods-image" style="height:34px">
+                                        <div style="position:absolute;bottom:0;left:65px;display:none;border: 1px solid #ccc;"><img src="{$info.image}" alt="" style="max-width: 500px;z-index: 999"></div>
+                                    </if>
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">地址</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" asp-for="GetT.Address">
+                                </div>
+                            </div>
+
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">邮编</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" asp-for="GetT.Zipcode">
+                                </div>
+                            </div>
+
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">总机电话</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" asp-for="GetT.Phone">
+                                </div>
+                            </div>
+
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">传真电话</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" asp-for="GetT.Faxphone">
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">底部备案号</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" asp-for="GetT.Footstr">
+                                </div>
+                            </div>
+
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <button class="btn btn-primary" type="submit">保存内容</button>
+                                    <button class="btn btn-white" type="button" onclick="history.back()">取消</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/js/jquery.min.js?v=2.1.4"></script>
+    <script src="~/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="~/js/content.min.js?v=1.0.0"></script>
+    <script src="~/js/plugins/iCheck/icheck.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="__PUBLIC__/libs/global.js"></script>
+    <script>
+    $(document).ready(function(){$(".i-checks").iCheck({checkboxClass:"icheckbox_square-green",radioClass:"iradio_square-green",})});
+    function call_back(fileurl_tmp){
+        $("#original_img").html('<img src="'+fileurl_tmp+'" alt="" style="height:34px">');
+        $('#original_img_input').val(fileurl_tmp);
+    }
+
+    $('.goods-image').mouseover(function(){
+        $(this).next().show();
+    }).mouseout(function(){
+        $(this).next().hide();
+    });
+    </script>
+
+</body>

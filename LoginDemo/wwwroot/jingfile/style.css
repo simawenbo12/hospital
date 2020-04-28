@@ -1,0 +1,1659 @@
+﻿/*顶部menu*/
+.tops{
+	background:url(http://www.stuh.com.cn/images/bj1.png) repeat-x;
+	width:100%;
+	height:34px;
+	line-height:34px;
+	border-bottom:1px solid #d8d8d8;
+}
+.topNav dl dd{
+	float:left;
+}
+.topNav dl dd a{
+	float:left;
+	display:block;
+	background:url(http://www.stuh.com.cn/images/xian.png) right center no-repeat;
+	height:34px;
+	line-height:34px;
+	padding-left:12px;
+	padding-right:12px;
+	font-family:"微软雅黑";
+	font-size:14px;
+	color:#b89625;
+}
+.topNav dl dd a:hover{
+	color:#2F99E4;
+}
+.topNav .wx{
+	display:none;
+	position:absolute;
+	width:70px;
+	top:35px;
+	border-top:0;
+	border:1px solid #b89625;
+	background:#fff;
+	-moz-box-shadow:3px 3px 3px rgba(0,0,0,.1);
+	-webkit-box-shadow:3px 3px 3px rgba(0,0,0,.1);
+	box-shadow:3px 3px 3px rgba(0,0,0,.1);
+}
+.topNav .wx li {
+	display:block;
+	width:70px;
+	height:70px;
+}
+.topNav .wx li img{
+	display:block;
+	width:70px;
+	height:70px;
+}
+
+/*logo和搜索框*/
+.top2{
+	background:#F1F9FD;
+	width:100%;
+	height:133px;
+}
+.logo{
+	padding-top:25px;
+}
+.input-text{
+	width:200px;
+	height:30px;
+	border:1px solid #d8d8d8;
+	background:#fff;
+	padding-left:4px;
+	font-family:"微软雅黑";
+	font-size:12px;
+	color:#999999;
+}
+.input-submit{
+	background:url(http://www.stuh.com.cn/images/bj2.png) repeat-x;
+	border:none;
+	border-right:1px solid #d8d8d8;
+	height:32px;
+	cursor:pointer;
+	font-family:"微软雅黑";
+	font-size:12px;
+	color:#ffffff;
+	width:68px;
+}
+.input-submit:hover{
+	opacity:0.9;
+}
+.form{
+	padding-top:53px;
+}
+.navmain{
+	width:100%;
+	background:url(http://www.stuh.com.cn/images/bj3.png) repeat-x;
+	height:46px;
+	line-height:46px;
+}
+.nav ul li{
+	float:left;
+}
+.nav ul li a{
+	display:block;
+	padding-left:23.2px;
+	padding-right:23.2px;
+	font-family:"微软雅黑";
+	font-size:12px;
+	color:#ffffff;
+}
+.nav ul li a:hover{
+    background:#1D74BE;
+}
+.nav ul li a.on{
+	background:#2B96E0;
+}
+.nav ul li a.imsc{
+	line-height:23px;
+	text-align:center;
+}
+.banner{
+	position:relative;
+	width:100%;
+	height:464px;
+}
+.fullSlide{ width:100%;  position:relative;  height:464px;}
+.fullSlide .bd{ margin:0 auto; position:relative; z-index:0; overflow:hidden;  }
+.fullSlide .bd ul{ width:100% !important;  }
+.fullSlide .bd li{ width:100% !important;  height:464px; overflow:hidden; text-align:center;  }
+.fullSlide .bd li a{ display:block; height:464px; }
+.fullSlide .hd{ width:100%;  position:absolute; z-index:1; bottom:0; left:0; height:30px; line-height:30px;}
+.fullSlide .hd ul{ text-align:center;}
+.fullSlide .hd ul li{ cursor:pointer; display:inline-block; *display:inline; zoom:1; width:30px; height:11px; margin:1px; background:#000; overflow:hidden; 
+filter:alpha(opacity=50);opacity:0.5;line-height:9999px; }
+.fullSlide .hd ul .on{ background:#00f; }
+.fullSlide .nonered{position:absolute;
+	left:0px;
+	top:600px;
+	z-index:3;
+}
+.fenxiang{
+	padding-top:7px;
+}
+.index-main{
+	width:100%;
+	min-height:500px;
+	padding-top:23px;
+	background:url(http://www.stuh.com.cn/images/bj5.jpg) center top no-repeat #F9F9F9;
+}
+.c1{
+	height:350px;
+	width:1000px;
+	margin-left:-1px;
+	padding-left:2px;
+}
+.c1-left{
+	width:663px;
+}
+/*主页标题栏格式设置*/
+.c1-top{
+	border-bottom:2px solid #c9daf8;
+	height:30px;
+	line-height:30px;
+}
+.title-left{
+	padding-left:7px;
+	border-bottom:2px solid #2895E0;
+	font-family:"微软雅黑";
+	font-size:16px;
+	color:#2895E0;
+	font-weight:bold;
+}
+.more-right{
+	padding-right:18px;
+	font-family:"微软雅黑";
+	font-size:12px;
+	color:#2895E0;
+}
+
+.c1n-bottom{
+	padding-left:16px;
+	padding-top:15px;
+}
+.c1-right-bottom{padding-top:15px;}
+.img1{
+	display:block;
+	width:305px;
+	height:248px;
+}
+.img1 img{
+	display:block;
+	width:305px;
+	height:248px;
+}
+.c1n-img .bd ul li{
+	display:block;
+	width:305px;
+	height:248px;
+	position:relative;
+}
+.c1n-img .bd{
+	width:305px;
+	height:248px;
+	position:relative;
+}
+.img-title{
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	height:40px;
+	line-height:40px;
+}
+.img-title a{
+	font-family:"微软雅黑";
+	font-size:12px;
+	color:#ffffff;
+	display:block;
+	width:288px;
+	background:url(http://www.stuh.com.cn/images/bj8.png);
+	padding-left:17px;
+}
+.img-title a:hover{
+	background:#2895E0;
+}
+.c1n-img .prev{
+	background:url(http://www.stuh.com.cn/images/left.png) no-repeat;
+	width:21px;
+	height:50px;
+	position:absolute;
+	top:90px;
+	left:0px;
+}
+.c1n-img .next{
+	background:url(http://www.stuh.com.cn/images/right.png) no-repeat;
+	width:21px;
+	height:50px;
+	position:absolute;
+	top:90px;
+	right:0px;
+}
+.c1n-img{
+	width:305px;
+	height:270px;
+	position:relative;
+}
+.c1n-list ul li{
+	display:block;
+	height:28px;
+	padding-left:9px;
+	background:url(http://www.stuh.com.cn/images/ico2.png) left 7px no-repeat;
+}
+.c1n-list{
+	padding-left:19px;
+}
+.c1n-list ul li a{
+	font-family:"微软雅黑";
+	font-size:14px;
+	color:#666666;
+	font-weight:100;
+}
+.LatestTimeNews{
+color:#FF6A6A;
+font-size:20px;}
+.c1n-list ul li a:hover{
+	color:#2895E0;
+}
+
+.c1-right{
+	width:310px;
+}
+
+.c2{
+	margin-top:0px;
+}
+.c2-img{
+	display:block;
+	width:109px;
+	height:150px;
+	border-radius:100%;
+	margin-bottom:10px;
+}
+.c2-img img{
+	display:block;
+	width:122px;
+	height:140px;
+}
+.c2-text1{
+	font-family:"微软雅黑";
+	font-size:14px;
+	color:#2895e0;
+}
+.c2-text1 a{
+	font-family:"微软雅黑";
+	font-size:14px;
+	color:#2895e0;
+	margin-bottom:10px;
+}
+.c2-text2{
+	font-family:"微软雅黑";
+	font-size:12px;
+	color:#666666;
+	line-height:18px;
+}
+.c2-slide .bd ul li{
+	display:block;
+	text-align:center;
+	float:left;
+	width:122px;
+	margin-right:20px;
+}
+.c2-slide .bd{
+	position:relative;
+	width:1000px;
+}
+.c2-slide{
+	position:relative;
+	width:1000px;
+	margin-top:15px;
+}
+.c3{
+	padding-top:25px;
+}
+.c3-left{
+	width:470px;
+}
+.c3-right{
+	width:502px;
+}
+
+.img2{
+	display:block;
+	width:410px;
+	height:295px;
+}
+.img2 img{
+	display:block;
+	width:410px;
+	height:295px;
+}
+.c2n-img .bd ul li{
+	display:block;
+	width:410px;
+	height:295px;
+	position:relative;
+}
+.c2n-img .bd{
+	width:410px;
+	height:295px;
+	position:relative;
+}
+.img-title2{
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	height:40px;
+	line-height:40px;
+}
+.img-title2 a{
+	font-family:"微软雅黑";
+	font-size:14px;
+	color:#ffffff;
+	display:block;
+	width:393px;
+	background:url(http://www.stuh.com.cn/images/bj8.png);
+	padding-left:17px;
+}
+.img-title2 a:hover{
+	background:#2895E0;
+}
+.c2n-img .prev{
+	background:url(http://www.stuh.com.cn/images/left.png) no-repeat;
+	width:21px;
+	height:50px;
+	position:absolute;
+	top:117px;
+	left:0px;
+}
+.c2n-img .next{
+	background:url(http://www.stuh.com.cn/images/right.png) no-repeat;
+	width:21px;
+	height:50px;
+	position:absolute;
+	top:117px;
+	right:0px;
+}
+.c2n-img{
+	width:410px;
+	height:295px;
+	position:relative;
+}
+.c3r-list{
+	width:502px;
+}
+.c3r-img{
+	width:194px;
+	height:143px;
+	border:1px solid #d8d8d8;
+}
+.c3r-img img{
+	width:194px;
+	height:143px;
+}
+.c3r-text{
+	width:296px;
+	text-align:left;
+	padding-top:23px;
+}
+.c3r-title a{
+	font-family:"微软雅黑";
+	font-size:15px;
+	color:#404040;
+}
+.c3r-text2{
+	padding-top:10px;
+}
+.c3r-text2 a{
+	font-family:"微软雅黑";
+	font-size:12px;
+	color:#666666;
+	line-height:22px;
+}
+.c3r-title a:hover{
+	color:#2895E0;
+}
+
+.c3r-text2 a:hover{
+	color:#2895E0;
+}
+
+.c3r-list{
+	margin-bottom:8px;
+}
+.c4{
+	height:252px;
+	width:1000px;
+	padding-left:2px;
+	margin-left:-1px;
+	margin-top:15px;
+}
+.c4-right{
+	width:502px;
+	margin-right:2px;
+}
+.c4r-slide{
+	padding-top:15px;
+}
+.czxx {padding-left:20px;
+        width:50px;}
+.c4r-slide .bd ul li .czxx a{
+color:#666666;}
+.c4r-slide .bd ul li .czxx a:hover{
+color:#2895E0;}
+.c4r-slide .bd ul li{
+	display:block;
+	height:28px;
+	line-height:28px;
+	padding-right:20px;
+	font-family:"微软雅黑";
+	font-size:12px;
+	color:#666666;
+}
+.c4r-slide .bd ul li font{
+	font-family:"微软雅黑";
+	font-size:12px;
+	color:#999999;
+}
+.c4r-slide .bd ul li a{
+	font-family:"微软雅黑";
+	font-size:12px;
+	color:#666666;
+}
+.c4r-slide .bd ul li a span{
+	font-family:"微软雅黑";
+	font-size:12px;
+	color:#2a96e0;
+}
+/*主页专题专栏格式设置*/
+.c4r-main{
+    width:502px;
+}
+.c4r-main ul li{
+    float:left;
+    display:block;
+	width:245px;
+	margin-right:5px;
+	margin-top:8px;
+}
+.c4r-main ul li a{
+    text-align:center;
+    float:left;
+    display:block;
+    width:245px;
+    height:110px;
+}
+.d1 a{
+	background:url(http://www.stuh.com.cn/images/d1.jpg) center no-repeat ;
+}
+.d1 a:hover{
+	background:url(http://www.stuh.com.cn/images/d1.jpg) center no-repeat #09a1e7;
+}
+.d2 a{
+	background:url(http://www.stuh.com.cn/images/d2.jpg) center no-repeat ;
+}
+.d2 a:hover{
+	background:url(http://www.stuh.com.cn/images/d2.jpg) center no-repeat #09a1e7;
+}
+.d3 a{
+	background:url(http://www.stuh.com.cn/images/d3.jpg) center no-repeat ;
+}
+.d3 a:hover{
+	background:url(http://www.stuh.com.cn/images/d3.jpg) center no-repeat #09a1e7;
+}
+.d4 a{
+	background:url(http://www.stuh.com.cn/images/d4.jpg) center no-repeat ;
+}
+.d4 a:hover{
+	background:url(http://www.stuh.com.cn/images/d4.jpg) center no-repeat #09a1e7;
+}
+
+.c5{width:968px;
+	border:1px solid #AADEFF;
+	background:#ffffff;
+	margin-top:15px;
+	padding:15px;list-style-type:none;}
+.c5 .slip img{border:0;width:100px;height:138px;}
+.c5 .slip ul li a{color: #616161; text-decoration:none; text-decoration:none;}
+.c5 .slip ul li a:hover{text-decoration:underline; }
+.slip{height:auto;width:960px;margin:0 auto;}
+.c5 .slip ul li{width:100px;height:129px;float:left;margin-right:20px;margin-top:20px;display:block;}
+h3{font-size:15px;color:#fff;font-family:微软雅黑;}
+
+.c8{width:1000px;
+margin-top:5px;}
+
+.links-main{
+	padding-bottom:30px;
+	padding-top:30px;
+	background:#FAFAFA;
+}
+.links{
+	width:998px;
+	border:1px solid #d8d8d8;
+	height:39px;
+	line-height:39px;
+	margin:0 auto;
+	background:#ffffff;
+}
+.links .bd ul{
+}
+.links .bd ul li{
+	display:block;
+	float:left;
+	display:inline-block;
+}
+.links .bd ul li a{
+	float:left;
+	font-family:"微软雅黑";
+	font-size:12px;
+	color:#666666;
+	display:block;
+	text-align:center;
+	width:100%;
+}
+.links .bd ul li a:hover{
+	color:#2895E0;
+}
+.links .bd{
+	width:844px;
+	padding-left:20px;
+	padding-right:20px;
+	overflow:hidden;
+}
+.footer{
+	background:url(http://www.stuh.com.cn/images/bj10.png) repeat-x;
+	height:150px;
+	width:100%;
+	padding-top:14px;
+}
+.footer-right{
+	width:630px;
+	padding-left:17px;
+	padding-top:10px;
+}
+.footer-nav ul li{
+	float:left;
+	display:block;
+	display:block;
+	height:20px;
+	line-height:20px;
+	background:url(http://www.stuh.com.cn/images/xian2.png) center right no-repeat;
+	padding-left:16px;
+	padding-right:16px;
+}
+.footer-nav ul li a{
+	float:left;
+	font-family:"微软雅黑";
+	font-size:14px;
+	color:#EFEFEF;
+}
+.footer-text{
+	padding-top:15px;
+	font-family:"微软雅黑";
+	font-size:12px;
+	color:#9fe2ff;
+	line-height:18px;
+}
+.footer-text a{
+	font-family:"微软雅黑";
+	font-size:12px;
+	color:#9fe2ff;
+}
+.pagemain{
+	background: url(http://www.stuh.com.cn/images/bj5.jpg) center top no-repeat #F9F9F9;
+	width: 100%;
+	min-height: 500px;
+	padding-top:10px;
+}
+.page-banner{
+	width:1000px;
+	height:164px;
+}
+.pagez{
+	padding-top:25px;
+}
+.page-left{
+	width:198px;
+}
+.page-nav{
+	width:196px;
+	border:1px solid #BED8E4;
+	background:#F4FBFF;
+}
+.page-title{
+	background:url(http://www.stuh.com.cn/images/bj11.png) no-repeat;
+	width:158px;
+	height:60px;
+	line-height:60px;
+	padding-left:38px;
+	font-family:"微软雅黑";
+	font-size:18px;
+	color:#ffffff;
+	font-weight:bold;
+}
+/*国际医疗部list_imsc*/
+.page-imsc-title{
+	background:url(http://www.stuh.com.cn/images/bj11.png) no-repeat;
+	width:158px;
+	height:60px;
+	line-height:27px;
+	padding-left:38px;
+	font-family:"微软雅黑";
+	font-size:14px;
+	color:#ffffff;
+	font-weight:bold;
+}
+.page-zfhf-title{
+	background:url(http://www.stuh.com.cn/images/bj_zfhf.png) no-repeat;
+	width:158px;
+	height:60px;
+	line-height:60px;
+	padding-left:38px;
+	font-family:"微软雅黑";
+	font-size:18px;
+	color:#ffffff;
+	font-weight:bold;
+}
+.page-nav ul li{
+	display:block;
+}
+.page-nav ul li a{
+	height:41px;
+	line-height:41px;
+	padding-left:14px;
+	width:182px;
+	font-family:"微软雅黑";
+	font-size:14px;
+	color:#3f9bd5;
+	border-bottom:1px solid #d8d8d8;
+	display:block;
+}
+.page-nav ul li a:hover{
+	background-color:#8dcaf1;
+	color:#ffffff;
+}
+.page-nav ul li.on a{
+	background-color:#3f9bd5;
+	color:#ffffff;
+}
+
+.page-nav2{
+	margin-top:20px;
+	width:196px;
+	border:1px solid #BED8E4;
+	background:#F4FBFF;
+}
+.page-nav2 ul li{
+	display:block;
+}
+.page-nav2 ul li a{
+	height:42px;
+	line-height:42px;
+	border-bottom:1px dotted #d8d8d8;
+	display:block;
+	font-family:"微软雅黑";
+	font-size:14px;
+	color:#666666;
+	padding-left:46px;
+	width:151px;
+}
+.x1 a{
+	background:url(http://www.stuh.com.cn/images/x1.png) 15px center no-repeat;
+}
+.x1 a:hover{
+	background:url(http://www.stuh.com.cn/images/x1.png) 15px center no-repeat #d5eefc;
+}
+.x1 a.on{
+	background:url(http://www.stuh.com.cn/images/x1.png) 15px center no-repeat #d5eefc;
+}
+.x2 a{
+	background:url(http://www.stuh.com.cn/images/x2.png) 15px center no-repeat;
+}
+.x2 a:hover{
+	background:url(http://www.stuh.com.cn/images/x2.png) 15px center no-repeat #d5eefc;
+}
+.x2 a.on{
+	background:url(http://www.stuh.com.cn/images/x2.png) 15px center no-repeat #d5eefc;
+}
+.x3 a{
+	background:url(http://www.stuh.com.cn/images/x3.png) 15px center no-repeat;
+}
+.x3 a:hover{
+	background:url(http://www.stuh.com.cn/images/x3.png) 15px center no-repeat #d5eefc;
+}
+.x3 a.on{
+	background:url(http://www.stuh.com.cn/images/x3.png) 15px center no-repeat #d5eefc;
+}
+.x4 a{
+	background:url(http://www.stuh.com.cn/images/x4.png) 15px center no-repeat;
+}
+.x4 a:hover{
+	background:url(http://www.stuh.com.cn/images/x4.png) 15px center no-repeat #d5eefc;
+}
+.x4 a.on{
+	background:url(http://www.stuh.com.cn/images/x4.png) 15px center no-repeat #d5eefc;
+}
+.x5 a{
+	background:url(http://www.stuh.com.cn/images/x5.png) 15px center no-repeat;
+}
+.x5 a:hover{
+	background:url(http://www.stuh.com.cn/images/x5.png) 15px center no-repeat #d5eefc;
+}
+.x5 a.on{
+	background:url(http://www.stuh.com.cn/images/x5.png) 15px center no-repeat #d5eefc;
+}
+.x6 a{
+	background:url(http://www.stuh.com.cn/images/x6.png) 15px center no-repeat;
+}
+.x6 a:hover{
+	background:url(http://www.stuh.com.cn/images/x6.png) 15px center no-repeat #d5eefc;
+}
+.x6 a.on{
+	background:url(http://www.stuh.com.cn/images/x6.png) 15px center no-repeat #d5eefc;
+}
+.x7 a{
+	background:url(http://www.stuh.com.cn/images/x7.png) 15px center no-repeat;
+}
+.x7 a:hover{
+	background:url(http://www.stuh.com.cn/images/x7.png) 15px center no-repeat #d5eefc;
+}
+.x7 a.on{
+	background:url(http://www.stuh.com.cn/images/x7.png) 15px center no-repeat #d5eefc;
+}
+.page-right{
+	width:768px;
+	border:1px solid #A0D4FF;
+	padding:10px;
+}
+	
+.pr-left{
+	font-family:"微软雅黑";
+	font-size:16px;
+	color:#666666;
+}
+.pr-tops{
+	padding-bottom:12px;
+	border-bottom:1px solid #d8d8d8;
+}
+.pr-right{
+	font-family:"微软雅黑";
+	font-size:12px;
+	color:#666666;
+	padding-top:3px;
+}
+.pr-right a{
+	font-family:"微软雅黑";
+	font-size:12px;
+	color:#666666;
+}
+.pagetext{
+	padding-top:15px;
+	line-height:180%;
+	font-family:"微软雅黑";
+	font-size:14px;
+	color:#666666;
+}
+.map-title{
+	background:url(http://www.stuh.com.cn/images/bj13.png) no-repeat;
+	width:89px;
+	height:40px;
+	text-align:center;
+	font-family:"微软雅黑";
+	font-size:14px;
+	color:#ffffff;
+	line-height:34px;
+}
+.maps{
+	width:743px;
+	height:523px;	
+}
+.input-text2{
+	width:154px;
+	height:30px;
+	border:1px solid #33A0E5;
+	padding-left:4px;
+	font-family:"微软雅黑";
+	font-size:12px;
+	color:#666666;
+}
+.input-submit2{
+	width:79px;
+	height:32px;
+	border:1px solid #33A0E5;
+	background:#33A0E5;
+	font-family:"微软雅黑";
+	font-size:12px;
+	color:#ffffff;
+	cursor:pointer;
+}
+.k-main{
+	width:968px;
+	border:1px solid #AADEFF;
+	background:#ffffff;
+	margin-top:15px;
+	padding:15px;
+}
+.klist ul li{
+	float:left;
+}
+.klist ul li a{
+	float:left;
+	height:40px;
+	line-height:40px;
+	display:block;
+	padding-left:15px;
+	padding-right:15px;
+	font-family:"微软雅黑";
+	font-size:16px;
+	color:#000000;
+	font-weight:100;
+	border:1px dotted #d8d8d8;
+	margin-right:15px;
+	margin-top:15px;
+}
+.klist{
+	padding-bottom:20px;
+}
+.klist ul li a:hover{
+	background:#33A0E5;
+	color:#ffffff;
+}
+.k1{
+	padding-bottom:20px;
+	border-bottom:1px dotted #d8d8d8;
+}
+.k1-left{
+	width:590px;
+	height:130px;
+}
+.k1list{
+margin-left:20px;
+padding-top:20px;}
+.k1list ul li{
+font-family:"微软雅黑";
+	font-size:16px;
+	color:#666666;
+	line-height:250%;}
+.k1list ul li a{font-size:16px;}
+.k1-left{
+	font-family:"微软雅黑";
+	font-size:14px;
+	color:#666666;
+	line-height:180%;
+}
+.k1-left b{
+	color:#33a0e5;
+	font-size:16px;
+}
+.k1-right{
+	width:305px;
+}
+.k1r-title{
+	width:290px;
+	height:36px;
+	background:#EDEDED;
+	padding-left:15px;
+	font-family:"微软雅黑";
+	font-size:14px;
+	color:#666666;
+	line-height:36px;
+}
+.k10{
+    width:915px;
+	padding-top:20px;
+	padding-bottom:10px;
+	border-bottom:1px dotted #d8d8d8;
+	font-family:"微软雅黑";
+	font-size:16px;
+	color:#666666;
+	line-height:180%;
+}
+.k10 b{color:#33a0e5;}
+.k2{
+	padding-bottom:15px;
+	border-bottom:1px dotted #d8d8d8;
+	padding-top:20px;
+}
+.k2-title{
+	font-family:"微软雅黑";
+	font-size:16px;
+	color:#33a0e5;
+}
+.klistmain{
+	padding-top:15px;
+}
+.klistmain ul li{
+	float:left;
+	display:block;
+	width:138px;
+	text-align:center;
+	margin-bottom:20px;
+}
+.k2-img{
+	width:90px;
+	height:120px;
+	display:block;
+	width:100%;
+	margin-bottom:8px;
+}
+.k2-img img{
+	width:90px;
+	height:120px;
+}
+.k3{
+	padding-top:20px;
+}
+.k3-text{
+	font-family:"微软雅黑";
+	font-size:14px;
+	color:#666666;
+	line-height:180%;
+	padding-top:15px;
+}
+.y1{
+	padding-bottom:20px;
+	border-bottom:1px dotted #d8d8d8;
+}
+.yimg{
+	width:122px;
+	height:150px;
+}
+.yimg img{
+	width:122px;
+	height:150px;
+}
+.y1-right{
+	width:770px;
+	padding-top:15px;
+}
+.y-title1{
+	font-family:"微软雅黑";
+	font-size:14px;
+	color:#33a0e5;
+}
+.ylist ul li{
+	float:left;
+	width:50%;
+	display:block;
+	padding-top:10px;
+	font-family:"微软雅黑";
+	font-size:14px;
+	color:#666666;
+}
+.imglist{
+	padding-bottom:15px;
+	margin-bottom:15px;
+	border-bottom:1px dotted #d8d8d8;
+}
+.imgs{
+	display:block;
+	float:left;
+	width:210px;
+	height:151px;
+}
+.imgs img{
+	display:block;
+	width:210px;
+	height:151px;
+}
+.imglist-r{
+	width:512px;
+	padding-top:15px;
+}
+.title1 a{
+	font-family:"微软雅黑";
+	font-size:16px;
+	color:#2c94e4;
+}
+.title1 a:hover{
+	color:#666666;
+}
+.title2{
+	padding-top:6px;
+	padding-bottom:6px;
+	font-family:"微软雅黑";
+	font-size:12px;
+	color:#666666;
+}
+.title3{
+	font-family:"微软雅黑";
+	font-size:14px;
+	color:#666666;
+	line-height:22px;
+}
+.listsn ul li{
+	display:block;
+	height:40px;
+	line-height:40px;
+	border-bottom:1px dotted #d8d8d8;
+}
+.listsn ul li a{
+	font-family:"微软雅黑";
+	font-size:14px;
+	color:#666666;
+}
+.listsn ul li a:hover{
+	color:#33A0E5;
+}
+.listsn ul li font{
+	font-family:"微软雅黑";
+	font-size:12px;
+	color:#999999;
+}
+.title4{
+	font-family:"微软雅黑";
+	font-size:24px;
+	color:#000000;
+	font-weight:100;
+	padding-bottom:10px;
+}
+.title5{
+	font-family:"微软雅黑";
+	font-size:12px;
+	color:#999999;
+}
+.page-texttop{
+	padding-bottom:15px;
+	margin-bottom:15px;
+	border-bottom:1px dotted #d8d8d8;
+	text-align:center;
+}
+.page-text{
+	font-family:"微软雅黑";
+	font-size:14px;
+	color:#666666;
+	line-height:180%;
+}
+.new-content-btn{
+	font-family:"微软雅黑";
+	font-size:14px;
+	color:#666666;
+}
+.new-content-btn a{
+	color:#33A0E5;
+}
+.newsb{
+	margin-top:15px;
+	border-top:1px dotted #d8d8d8;
+	padding-top:15px;
+}
+.f-hd-nav1{height:45px !important;width:960px;}
+.f-hd-nav1-li1{height:45px !important;overflow:hidden; width:20%;line-height: 45px;float:left;}
+
+.f-ct-nav1{height:248px !important; width:960px;}
+.f-ct-nav1-li1{height:248px !important;float:left;}
+.f-ct-nav1-li1 .f-button{width: 90px;height: 30px;text-align: center;line-height: 25px;background-color: #1794CC;color: white;}
+.f-ct-nav1-li1-ul1-li1{height: 27px;width:160px;line-height: 27px;}
+
+.f-hd-nav1-li1-update1{height:45px !important;overflow:hidden; width:192px;line-height: 45px;float:left;text-align: center;}
+.f-hd-nav1-li1-update2{height:45px !important;overflow:hidden; width:380px;line-height: 45px;float:left;text-align: center;}
+.f-buttoncss{margin: 20px 30px 0px 0px;width: 90px;height: 30px;overflow: hidden;float: right;}
+.f-mg4-update {margin-left: 55px;}
+
+.f-li8{width: 135px;height:212px;display: inline;margin: 0px 2px;}
+.g-hd-1 .m-subnav{position:absolute;width: 100%;float: left;}
+/* .m-subnav{height:200px;} */
+.m-subnav{height:0px !important;*height:0px;}
+.m-subnav-w{background-color:#fff;}
+.m-subnav .inner{position:static;background-color:#ffffff;height:303px;border-bottom:1px solid #1693CB;border-left:1px solid #1693CB;border-right:1px solid #1693CB;}
+.m-subnav p{display:inline;float:left;line-height:32px;color:#bdbdbd;font-size:14px;cursor:normal;}
+.m-subnav p a{color:#333;padding:0 21px;float:left;height:31px;_padding:0 20px;}
+.m-subnav p a:hover{text-decoration:none;border-bottom:#72af14 solid 1px;}
+.m-subnav p span{float:left;}
+.m-subnav p a.crt{font-weight:bold;color:#72af14;}
+.m-subnav {
+  position: absolute;
+  width: 1000px;
+  float: left;
+  z-index:99;
+  left:50%;
+  top:46px;
+  margin-left:-500px;
+}
+#innerid {
+  overflow: hidden;
+  background: #0B6790;
+}
+.m-subnav .f15-bdr{
+	color: #e1df3f;
+	line-height: 45px;
+	border-bottom: #08597d solid 2px;
+	padding-bottom: 6px;
+	padding-right: 10px;
+	font-size: 14px;
+	font-weight: bold;
+}
+.m-subnav .f15-bdr:HOVER{
+	color: #e1df3f;
+	text-decoration: none;
+}
+.m-subnav .f-ft2{
+	color: white;
+	padding: 7px 8px 8px 10px;;
+	margin-bottom: 15px;
+	line-height: 32px;
+	font-size: 14px;
+}
+.m-subnav .f-ft2:HOVER {
+	background-color: #08587c;
+	color: white;
+	text-decoration: none;
+}
+.m-subnav .head_title{
+	position: relative;
+	top:15px;
+}
+.m-subnav .f-lh27{
+	margin-bottom: -5px;
+	height: 32px;
+}
+.m-subnav .head_dt{
+	position: relative;
+	top: 5px;
+	margin-right: 3px;
+}
+.m-subnav .head_yyjs{
+	position: relative;
+	top: 5px;
+	margin-right: 3px;
+	margin-left: -12px;
+}
+.m-subnav .f-bd-2{
+	border-left: 1px dashed #2a88b1;
+}
+.m-subnav .f-ct-nav1-li1-ul1-li1{
+	margin-bottom: 3px;
+	margin-left: 51px;
+}
+.m-subnav .head_pbimg{
+	width: 370px;
+	height: 50px;
+	text-align: center;
+	margin-top: 10px;
+}
+.m-subnav .f-bd-3{
+	border-right: 1px dashed #2a88b1;
+}
+.m-subnav .l1{
+	background: none;
+	border: none;
+	background-color: #08587c;
+	color: white;
+}
+.m-subnav .l1 a{
+	color: white;
+	border: none;
+	font-size: 14px;
+	font-weight: bold;
+}
+.m-subnav .l1 a:HOVER{
+	color: white;
+	text-decoration: none;
+}
+.m-subnav .l2{
+	background: none;
+	border: none;
+	background-color: #a4d1e5;
+	
+}
+.m-subnav .l2 a{
+	color: #08587c;
+	border: none;
+	font-size: 14px;
+	font-weight: bold;
+}
+.m-subnav .kslb-nav li{
+	border: 1px solid #bedbe8;
+}
+.m-subnav .ksliebiao .ks-li{
+	height: 25px;
+	line-height: 25px;	
+}
+.m-subnav .ksliebiao .ks-li a{
+	line-height: 25px;
+	/* margin-left: 10px; */
+	font-size: 14px;
+}
+.m-subnav .ksliebiao .ks-li a:HOVER {
+	text-decoration: underline;
+}
+.m-subnav .nav-color{
+	color: #e1df3f;
+	line-height: 45px;
+	border-bottom: #08597d solid 2px;
+	padding-bottom: 6px;
+	padding-right: 10px;
+	font-size: 14px;
+	font-weight: bold;
+}
+.m-subnav .nav-color:HOVER{
+	color: #e1df3f;
+	text-decoration: none;
+}
+.m-subnav .zn-list a{
+	color: white;
+}
+.m-subnav .zn-list a:HOVER{
+	color: white;
+}
+.m-subnav .zylc-ghxz{
+	margin: 0px 5px;
+}
+.m-subnav .nav-fgx{
+	border-left: 1px dashed #2a88b1;
+}
+.m-subnav .xwlist li{
+	height: 25px;
+	overflow: hidden;
+	line-height:25px;
+}
+.m-subnav .xwlist a{
+	color: white;
+	line-height: 25px;
+}
+.m-subnav .xwlist a:HOVER {
+	color: white;
+}
+.m-subnav .xwlist span{
+	color: white;
+	line-height: 25px;
+}
+.m-subnav .xwlist span:HOVER{
+	color: white;
+	line-height: 25px;
+}
+.m-subnav #pagelist li a .ldt{
+	color: white;
+}
+.m-subnav #pagelist li a .ldt:HOVER{
+	color: white;
+	
+}
+.m-subnav .ldt{
+	line-height: 35px;
+}
+.m-subnav .h-list li{
+	font-size: 14px;
+}
+.m-subnav .kyjx_li1{
+	margin-left: 15px;
+	width: 240px;
+	height: 25px;
+}
+.m-subnav .yywh-li1{
+	margin-left: 30px;
+}
+.head-jkzx{
+	color: #55aad0;
+	background-color: #0e4f6c;
+	float: left;
+	font-size: 14px;
+	margin-left: 12px;
+	line-height: 27px;
+}
+.m-subnav .jkjy-f-ft2:HOVER {
+	background-color: #186d93;
+}
+.m-subnav .list_box2{
+	margin-top: -22px;
+}
+.rmzjj{
+	margin-top: -10px;
+}
+.j-subnav{
+overflow: hidden;
+height: 300px;
+display: none;
+}
+#innerid{
+overflow: hidden;
+background:#0B6790;
+}
+.m-headertop{
+	background: url(http://www.stuh.com.cn/images/gwbg.jpg) top left repeat-x;
+	padding:1px 0;
+}
+.m-ht{
+	background: #f7f7f7;
+	border-bottom: #e2e4e5 solid 1px;
+}
+#J_Nav li:HOVER{
+	height: 40px;
+}
+#J_Nav li{
+	line-height: 40px
+}
+
+.m-headerbottom{
+	padding:1px 0;height: 36px;overflow: hidden;
+}
+.iframe{
+	width:300px;height: 150px;
+}
+.J-Navaa span:HOVER{
+text-decoration: none;
+
+}
+.zjzx{
+	width: 300px;
+	height: 240px;
+	background: url(http://www.stuh.com.cn/images/zjzx_bg.png) top left no-repeat;
+	margin-left: 32px;
+	margin-top: 10px;
+}
+.j-subnav{
+	background-color: #0b6790;
+}
+.J-Navaa span{
+	font-size: 14px;
+	margin-right: -20px;
+	line-height: 17px;
+	width: 100px;
+	display: block;
+	border-right: #36ace1 solid 2px;
+	height: 18px;
+	margin-top: 8px;
+	font-family: "宋体";
+}
+.m-logo{
+	margin-top: 10px;
+}
+.zjysjslogo{
+	width: 142px;
+	height: 36px;
+	background: url(http://www.stuh.com.cn/images/zjysjslogo.png) top left no-repeat;
+	float: left;
+	margin-top: 10px;
+	margin-left: 20px;
+}
+
+.f15 {
+	FONT-SIZE: 15px;
+	FONT-WEIGHT: bolder;
+}
+
+.f14 {
+	FONT-SIZE: 14px;
+}
+
+.f-lh27 {
+	height: 24px;
+	line-height: 27px;
+}
+
+.f-lh27-1 {
+	line-height: 27px;
+}
+
+.color1 {
+	color: #30ACE2;
+}
+/* 蓝色 */
+.color2 {
+	color: #1794CC;
+}
+
+.color3 {
+	color: #666;
+}
+
+.f15-bdr {
+	font-weight: bolder;
+	font-size: 14px;
+	color: #0a8ec9;
+	font-family: "黑体";
+}
+
+.f20-bdr {
+	font-weight: bolder;
+	font-size: 20px;
+}
+
+.f-mg1 {
+	margin: 0px 7px 0px 14px;
+}
+
+.f-mg2 {
+	margin-right: 17px;
+}
+
+.f-mg3 {
+	margin: 14px 0px 20px 17px;
+}
+
+.f-mg4 {
+	margin-left: 18px;
+}
+
+.f-mg6 {
+	margin-left: 34px;
+}
+
+.f-mg5 {
+	margin-left: 3px;
+}
+
+.f-mg7 {
+	margin-left: 12px;
+}
+
+.f-mg8 {
+	margin-top: 25px;
+}
+
+/* 边框灰色为1 */
+.f-bd-1 {
+	border: 1px solid #DBDBDB;
+}
+
+.f-bd-2 {
+	border-left: 1px dashed #d0d0d0;
+}
+
+.f-bd-3 {
+	border-right: 1px dashed #d0d0d0;
+}
+
+.f-bd-4 {
+	border: 1px solid #DEDEDE;
+}
+/* 边框灰色为1 */
+/* 背景色为白色 */
+.f-bg {
+	background-color: #ffffff;
+}
+/* 背景色为白色 */
+/* 背景色为灰色 */
+.f-bg1 {
+	background: url(../img/images/first2.png) repeat ;
+}
+.f-bg7 {
+	background: url(../img/images/first2.png) repeat;
+}
+.f-bg6 {
+	background: url(../img/images/first6.png) repeat top right;
+}
+.f-bg9 {
+	background: url(../img/images/first1.png) repeat;
+}
+.f-bg5 {
+	background: url(../img/images/first4.png) 1px repeat;
+}
+/* 背景色为灰色 */
+/* 背景色为蓝色 */
+.f-bg2 {
+	background-color: #bee2f3;
+}
+.f-bg2 a{
+	color: #0d7eb1;
+}
+/* 背景色为蓝色 */
+.f-bg3 {
+	background: url(../img/images/first3.png) repeat;
+}
+
+.f-bg4 {
+	background: url(../img/images/videologo.png) 0px 0px no-repeat;
+}
+
+/*底部边框灰色为1 */
+.f-bd-bm-1 {
+	border-bottom: 1px solid #DBDBDB;
+}
+/*底部边框灰色为1 */
+/*右边框白色为1 */
+.f-bdr-1 {
+	border-right: 1px solid #fff;
+}
+/*左边框白色为1 */
+.f-bdl-1 {
+	border-left: 1px solid #fff;
+}
+
+/*字体灰色15px加粗 */
+.f-ft1 {
+	font: 15px/1.14 arial, \5b8b\4f53;
+	color: #666;
+	font-weight: bolder;
+}
+/*字体灰色15px不加粗 */
+.f-ft2 {
+	font: 15px/1.14 arial, \5b8b\4f53;
+	color: #666;
+}
+/*字体灰色12px不加粗 */
+.f-ft3 {
+	font: 12px/1.14 arial, \5b8b\4f53;
+	color: #666;
+}
+
+/*加入背景图片 */
+.f-a1 {
+	background: url(http://www.stuh.com.cn/images/qbgds.jpg) 0px 0px no-repeat;
+}
+
+.f-a2 {
+	background: url(http://www.stuh.com.cn/images/gh.jpg) 0px 0px no-repeat;
+}
+
+.ul-nav{width:960px;margin-bottom:5px;height: 40px;}
+.li-nav{font-size: 18px;float:left;height: 50px;width:190px;margin:0px 1px;line-height: 50px;}
+.h-list{float:left;height: 230px;width:189px;margin:0px 1px;}
+.nav-color{color:#30ACE2;margin-left: 15px;}
+.h-height{width:190px;}
+.h-list li{font-size: 15px;line-height: 21px;margin:0px 0px;height: 21px;margin-left:15px;}
+.zdxk{height: 130px;width:189px;}
+.lmbt{font-size: 15px;margin-left:10px;font-weight: bolder;}
+.zdsys{height: 94px;width:189px;margin-top:5px;}
+.nav-fgx{border-left:1px dashed #d0d0d0;}
+
+.h-list-update{float:left;height: 230px;width:189px;margin:0px 0px 0px 35px;}
+.h-list-update li{font-size: 15px;line-height: 25px;margin:2px 0px;height: 25px;margin-left:15px;}
+
+.zn-nav{width: 725px;height: 50px;}
+.cjwt-nav{width: 230px;}
+.zn-list{margin-left:10px;margin-right:5px;height: 230px;width:95px;float:left;}
+.zn-right{height: 230px;width:613px;float:left;}
+.ghxz-zylc{height: 20px;width:306px;float:left;line-height: 20px;}
+.ghxz-zylc a{margin-left:30px;display: inline;}
+.zylc-ghxz{height: 232px;width:295px;margin:-22px 5px;line-height: 18px;font-size:13px;}
+
+
+
+
+.jb{width:571px;}
+.jkzx{width:384px;}
+.jb-list-header{width:571px;height: 25px;margin:0px 0px;}
+.jb-header{width:25%;height: 25px;line-height: 25px;float:left;font-size:15px;display: inline;}
+.jb-header a{margin-left:10px;font-weight: bolder;}
+.jb-list{float:left;width:25%;height: 205px;}
+.jb-list li{height: 20px;line-height: 20px;}
+.zm li{width:20px;float:left;}
+.jkzx-list{float:left;height: 230px;}
+.jkzx-tp{float:left;height: 230px;width: 305px;}
+.jkzx-tp .tp{width:265px;height: 180px;margin:0px 20px;background-color:#389;}
+.jkzx-tp .dy{width:265px;height: 25px;margin:0px 20px;margin-top:10px;background-color:#324;}
+
+
+
+.ssys{width:380px;}
+.kslb{width:575px;}
+.ks-box{width:565px;height:180px;margin:0px 5px;}
+.kslb-nav{width:555px;height:30px;margin:10px 10px;display: inline;}
+.kslb-nav li{float:left;wizdth:103px;height:28px;line-height: 28px;border:1px solid #E2E2E2;margin: 0px 0px;text-align: center;}
+.ks-li{float: left;margin: 2px 2px;height: 20px;line-height:20px; overflow: hidden;}
+.l1{background:url(http://www.stuh.com.cn/images/f.png) top left repeat-x;}
+.l1  a:HOVER{color: #1690C6;}
+.l1 a{color: #1690C6;}
+.l2{background:url(http://www.stuh.com.cn/images/z.png); background-repeat: repeat-x;}
+.l2 a{color: black;}
+
+
+
+.yyjs{width:190px;}
+.dtdh{width:765px;}
+.dtdh img{width:755px;height: 230px;margin:0px 5px;}
+.yyjs-list{font-size: 15px;line-height: 25px;margin:2px 0px;height: 25px;margin-left:15px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.centers{text-align: center;}
+.sizes{font-size:15px;}
+.bolds{font-weight: bolder;}
+
+
+
+.f-hd-nav1{height:45px !important;width:960px;}
+.f-hd-nav1-li1{height:45px !important;overflow:hidden; width:20%;line-height: 45px;float:left;}
+
+.f-ct-nav1{height:248px !important; width:960px;}
+.f-ct-nav1-li1{height:248px !important;float:left;}
+.f-ct-nav1-li1 .f-button{width: 90px;height: 30px;text-align: center;line-height: 25px;background-color: #1794CC;color: white;}
+.f-ct-nav1-li1-ul1-li1{height: 27px;width:160px;line-height: 27px;}
+
+.f-hd-nav1-li1-update1{height:45px !important;overflow:hidden; width:192px;line-height: 45px;float:left;text-align: center;}
+.f-hd-nav1-li1-update2{height:45px !important;overflow:hidden; width:380px;line-height: 45px;float:left;text-align: center;}
+.f-buttoncss{margin: 20px 30px 0px 0px;width: 90px;height: 30px;overflow: hidden;float: right;}
+.f-mg4-update {margin-left: 55px;}
+
+.f-li8{width: 135px;height:212px;display: inline;margin: 0px 2px;}
+
+
+.izl-rmenu{position:fixed; left:50%; margin-left:532px; bottom:10px; padding-bottom:73px; background:url(http://www.stuh.com.cn/images/r_b.png) 0px bottom no-repeat; z-index:999; }
+.izl-rmenu .btn{width:72px; height:73px; margin-bottom:1px; cursor:pointer; position:relative;}
+.izl-rmenu .btn-qq{background:url(http://www.stuh.com.cn/images/r_qq.png) 0px 0px no-repeat; background-color:#2E96E4;}
+.izl-rmenu .btn-qq:hover{background-color:#2E96E4;}
+.izl-rmenu a.btn-qq,.izl-rmenu a.btn-qq:visited{background:url(http://www.stuh.com.cn/images/r_qq.png) 0px 0px no-repeat; background-color:#2E96E4; text-decoration:none; display:block;}
+.izl-rmenu .btn-wx{background:url(http://www.stuh.com.cn/images/r_wx.png) 0px 0px no-repeat; background-color:#2E96E4;}
+.izl-rmenu .btn-wx2{background:url(http://www.stuh.com.cn/images/wbx.png) 0px 0px no-repeat; background-color:#2E96E4;}
+.izl-rmenu .btn-wx:hover{background-color:#2E96E4;}
+.izl-rmenu .btn-wx .pic{position:absolute; left:-160px; top:0px; display:none;width:160px;height:160px;}
+.izl-rmenu .btn-wx2:hover{background-color:#2E96E4;}
+.izl-rmenu .btn-wx2 .pic{position:absolute; left:-160px; top:0px; display:none;width:160px;height:160px;}
+.izl-rmenu .btn-phone{background:url(http://www.stuh.com.cn/images/r_phone.png) 0px 0px no-repeat; background-color:#2E96E4;}
+.izl-rmenu .btn-phone:hover{background-color:#2E96E4;}
+.izl-rmenu .btn-phone .phone{background-color:#2E96E4; position:absolute; width:160px; left:-160px; top:0px; line-height:73px; color:#FFF; font-size:18px; text-align:center; display:none;}
+.izl-rmenu .btn-top{background:url(http://www.stuh.com.cn/images/r_top.png) 0px 0px no-repeat; background-color:#666666; display:none;}
+.izl-rmenu .btn-top:hover{background-color:#444;}
+
+#advertisement{Z-INDEX: 100; LEFT: 2px; WIDTH: 59px; POSITION: absolute; TOP: 43px; HEIGHT: 61px;
+ visibility: visible;}
+ 
+ /*历史回眸页面设置*/
+.history{width:100%;height:6400px;}
+
+/*医院荣誉页面设置*/
+.glory{width:100%;height:4700px;}

@@ -1,0 +1,108 @@
+﻿@page
+@model LoginDemo.Pages.Manager.BLoginModel
+@{
+    ViewData["Title"] = "后台登录";
+}
+<!DOCTYPE html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="~/dist/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="~/dist/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+
+    <link href="~/dist/css/animate.min.css" rel="stylesheet">
+    <link href="~/dist/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0;ie.html" />
+    <![endif]-->
+    <script>if (window.top !== window.self) { window.top.location = window.location; }</script>
+</head>
+
+<body class="gray-bg">
+    <partial name="_CookieConsentPartial" />
+    <div class="middle-box text-center loginscreen  animated fadeInDown">
+        <div>
+            <div>
+
+
+            </div>
+            <h3>欢迎登录</h3>
+
+            <form class="m-t" role="form" method="post" onsubmit="return Verify()">
+                <div class="form-group">
+                    <input type="text" asp-for="HmAdmin.Id" class="form-control" placeholder="账号" required="">
+                </div>
+                <div class="form-group">
+                    <input type="password" asp-for="HmAdmin.Password" class="form-control" placeholder="密码" required="">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="CaptchaText" class="form-control" placeholder="验证码" required="">
+                    <br />
+                    <img name="imgCaptcha" style="cursor: pointer;" src="/api/Captcha/GetCaptcha" onclick="this.src = this.src+'?'" alt="验证码" />
+                    <br />
+                </div>
+                <button type="submit" class="btn btn-primary block full-width m-b">登 录</button>
+            </form>
+        </div>
+    </div>
+    <script src="~/dist/js/jquery.min.js?v=2.1.4"></script>
+    <script src="~/dist/js/bootstrap.min.js?v=3.3.6"></script>
+<script>
+    function getCookie(name) {
+        //获取Cookie值
+        var strCookie = document.cookie;
+        var arrCookie = strCookie.split("; ");
+        for (var i = 0; i < arrCookie.length; i++) {
+            var arr = arrCookie[i].split("=");
+            if (arr[0] === name) return arr[1];
+        }
+        return "";
+    }
+    function Verify() {
+        //调用验证码校验方法
+        var answer = encodeURI($("#CaptchaText").val());
+        var captcha = encodeURI(getCookie('Captcha'));
+        var model = {
+            Answer: answer,
+            Captcha: captcha
+        };
+        var json = JSON.stringify(model);
+        let isright = false;
+        $.ajax({
+            async: false,
+            type: "POST",
+            url: "/api/Captcha/verify",
+            cache: false,
+            timeout: 60 * 60 * 1000,
+            contentType: "application/json",
+            dataType: "json",
+            data: json,
+            success: function (result) {
+                isright = result.code == 100 ? true : false;
+                if (!isright) {
+                    alert("验证码不正确");
+                    window.location.reload();
+                }
+            }
+        });
+        return isright;
+    }
+</script>
+</body>
+
+<!--
+<h2>后台登录</h2>
+
+<form method="post">
+    <label>账号:</label><input asp-for="HmAdmin.Id" />
+    <label>密码:</label><input asp-for="HmAdmin.Password" />
+    <input type="submit" value="登录" />
+</form>
+      <h2>@ViewBag.Error</h2>
+    -->

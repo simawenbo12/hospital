@@ -1,0 +1,12 @@
+﻿@page "{id:int}"
+@model LoginDemo.Pages.Manager.GongGaoMod.GongGaoReadModel
+@{
+    ViewData["Title"] = "查看公告";
+}
+
+<h2>查看公告</h2>
+
+<p><label>公告标题 :</label> @Model.HmGonggao.Title</p>
+<p><label>公告描述 :</label> @Model.HmGonggao.Description</p>
+<p>公告内容</p>
+<p>@Html.Raw(Model.HmGonggao.Content)</p>
